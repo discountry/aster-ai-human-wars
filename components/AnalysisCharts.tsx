@@ -29,19 +29,31 @@ const LOSS_COLOR = '#EF4444';   // Red-500
 const INACTIVE_COLOR = '#64748B'; // Slate-500
 
 const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-slate-800 border border-slate-700 p-3 rounded shadow-xl text-xs">
-        <p className="font-bold text-slate-200 mb-1">{label || payload[0].payload.name}</p>
-        {payload.map((entry: any, index: number) => (
-          <p key={index} style={{ color: entry.payload.color || entry.color }}>
-            {entry.name}: {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
-          </p>
-        ))}
-      </div>
-    );
+  if (!active || !payload || !payload.length) {
+    return null;
   }
-  return null;
+
+  const filteredPayload = payload.filter(
+    (entry: any) => entry && entry.payload
+  );
+  const displayPayload = filteredPayload.length > 0 ? filteredPayload : payload;
+  const titleEntry = displayPayload[0];
+  const title =
+    titleEntry?.payload?.name ||
+    label ||
+    titleEntry?.name ||
+    '';
+
+  return (
+    <div className="bg-slate-800 border border-slate-700 p-3 rounded shadow-xl text-xs">
+      <p className="font-bold text-slate-200 mb-1">{title}</p>
+      {displayPayload.map((entry: any, index: number) => (
+        <p key={index} style={{ color: entry.payload?.color || entry.color }}>
+          {entry.name}: {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
+        </p>
+      ))}
+    </div>
+  );
 };
 
 const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
@@ -81,13 +93,21 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
   ];
 
   // 3. Scatter Data (Trades vs PnL)
-  const scatterDataHuman = data
-    .filter(d => d.user.userType === 'HUMAN')
-    .map(d => ({ x: d.trades, y: d.pnlTotal, z: d.totalVolume, name: d.user.nickName }));
-    
-  const scatterDataAI = data
-    .filter(d => d.user.userType === 'AI')
-    .map(d => ({ x: d.trades, y: d.pnlTotal, z: d.totalVolume, name: d.user.nickName }));
+  const formatScatterPoint = (trader: TraderData) => ({
+    x: trader.trades,
+    y: trader.pnlTotal,
+    z: trader.totalVolume,
+    name: trader.user.nickName,
+  });
+
+  // Keep arrays aligned with the original data indexes so the tooltip index stays in sync.
+  const scatterDataHuman = data.map((trader) =>
+    trader.user.userType === 'HUMAN' ? formatScatterPoint(trader) : null
+  );
+
+  const scatterDataAI = data.map((trader) =>
+    trader.user.userType === 'AI' ? formatScatterPoint(trader) : null
+  );
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
