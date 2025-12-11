@@ -1,0 +1,5 @@
+{
+  "name": "AI vs Human Trading Wars",
+  "description": "A comprehensive data dashboard analyzing the performance differences between AI bots and human traders based on real-time leaderboard data.",
+  "requestFramePermissions": []
+}
