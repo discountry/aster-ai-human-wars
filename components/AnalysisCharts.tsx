@@ -16,9 +16,11 @@ import {
   ZAxis
 } from 'recharts';
 import { TraderData } from '../types';
+import type { ChartTexts } from '../i18n';
 
 interface AnalysisChartsProps {
   data: TraderData[];
+  texts: ChartTexts;
 }
 
 const COLORS = ['#60A5FA', '#A78BFA']; // Blue for Human, Purple for AI
@@ -42,7 +44,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
+const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
   // 1. Data for Pie Chart (PnL Distribution)
   let profitableCount = 0;
   let lossCount = 0;
@@ -59,9 +61,9 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
   });
 
   const pieData = [
-    { name: 'Profitable', value: profitableCount, color: PROFIT_COLOR },
-    { name: 'Loss', value: lossCount, color: LOSS_COLOR },
-    { name: 'Inactive (0 Vol)', value: inactiveCount, color: INACTIVE_COLOR },
+    { name: texts.profitable, value: profitableCount, color: PROFIT_COLOR },
+    { name: texts.loss, value: lossCount, color: LOSS_COLOR },
+    { name: texts.inactive, value: inactiveCount, color: INACTIVE_COLOR },
   ].filter(d => d.value > 0);
 
   // 2. Data for Average PnL Comparison
@@ -75,7 +77,7 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
   const avgAiPnL = aiCount ? aiPnL / aiCount : 0;
 
   const barData = [
-    { name: 'Avg Total PnL', Human: Math.round(avgHumanPnL), AI: Math.round(avgAiPnL) }
+    { name: texts.avgTotalPnL, human: Math.round(avgHumanPnL), ai: Math.round(avgAiPnL) }
   ];
 
   // 3. Scatter Data (Trades vs PnL)
@@ -91,7 +93,7 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
       {/* Chart 1: Profitability Distribution */}
       <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 shadow-lg">
-        <h3 className="text-lg font-semibold mb-4 text-slate-200">Profitability Distribution</h3>
+        <h3 className="text-lg font-semibold mb-4 text-slate-200">{texts.profitabilityTitle}</h3>
         <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
             <PieChart>
@@ -117,7 +119,7 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
 
       {/* Chart 2: Average Performance */}
       <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 shadow-lg">
-        <h3 className="text-lg font-semibold mb-4 text-slate-200">Avg. PnL (Human vs AI)</h3>
+        <h3 className="text-lg font-semibold mb-4 text-slate-200">{texts.averageTitle}</h3>
         <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
             <BarChart data={barData} layout="vertical">
@@ -126,8 +128,8 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
                 <YAxis dataKey="name" type="category" stroke="#94a3b8" hide />
                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'transparent'}} />
                 <Legend />
-                <Bar dataKey="Human" fill={COLORS[0]} radius={[0, 4, 4, 0]} />
-                <Bar dataKey="AI" fill={COLORS[1]} radius={[0, 4, 4, 0]} />
+                <Bar dataKey="human" name={texts.human} fill={COLORS[0]} radius={[0, 4, 4, 0]} />
+                <Bar dataKey="ai" name={texts.ai} fill={COLORS[1]} radius={[0, 4, 4, 0]} />
             </BarChart>
             </ResponsiveContainer>
         </div>
@@ -135,19 +137,19 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data }) => {
 
        {/* Chart 3: Scatter Performance */}
        <div className="col-span-1 lg:col-span-2 bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 shadow-lg">
-        <h3 className="text-lg font-semibold mb-4 text-slate-200">Trade Frequency vs Profitability</h3>
-        <p className="text-xs text-slate-400 mb-4">X-Axis: Number of Trades, Y-Axis: Total PnL ($). Bubble size represents volume.</p>
+        <h3 className="text-lg font-semibold mb-4 text-slate-200">{texts.scatterTitle}</h3>
+        <p className="text-xs text-slate-400 mb-4">{texts.scatterSubtitle}</p>
         <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                <XAxis type="number" dataKey="x" name="Trades" stroke="#94a3b8" label={{ value: 'Trades', position: 'insideBottomRight', offset: -10, fill: '#94a3b8' }} />
-                <YAxis type="number" dataKey="y" name="PnL" stroke="#94a3b8" label={{ value: 'PnL ($)', angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
-                <ZAxis type="number" dataKey="z" range={[50, 400]} name="Volume" />
+                <XAxis type="number" dataKey="x" name={texts.axisTrades} stroke="#94a3b8" label={{ value: texts.axisTrades, position: 'insideBottomRight', offset: -10, fill: '#94a3b8' }} />
+                <YAxis type="number" dataKey="y" name={texts.axisPnL} stroke="#94a3b8" label={{ value: texts.axisPnL, angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
+                <ZAxis type="number" dataKey="z" range={[50, 400]} name={texts.axisVolume} />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} content={<CustomTooltip />} />
                 <Legend />
-                <Scatter name="Human" data={scatterDataHuman} fill={COLORS[0]} fillOpacity={0.6} shape="circle" />
-                <Scatter name="AI" data={scatterDataAI} fill={COLORS[1]} fillOpacity={0.6} shape="triangle" />
+                <Scatter name={texts.human} data={scatterDataHuman} fill={COLORS[0]} fillOpacity={0.6} shape="circle" />
+                <Scatter name={texts.ai} data={scatterDataAI} fill={COLORS[1]} fillOpacity={0.6} shape="triangle" />
             </ScatterChart>
             </ResponsiveContainer>
         </div>

@@ -7,11 +7,17 @@ interface StatsCardsProps {
 }
 
 const StatsCards: React.FC<StatsCardsProps> = ({ metrics }) => {
-  const getIcon = (label: string) => {
-    if (label.includes('Human')) return <Users className="w-5 h-5 text-blue-400" />;
-    if (label.includes('AI')) return <Bot className="w-5 h-5 text-purple-400" />;
-    if (label.includes('Volume')) return <TrendingUp className="w-5 h-5 text-green-400" />;
-    return <DollarSign className="w-5 h-5 text-yellow-400" />;
+  const getIcon = (icon?: StatMetric['icon']) => {
+    switch (icon) {
+      case 'human':
+        return <Users className="w-5 h-5 text-blue-400" />;
+      case 'ai':
+        return <Bot className="w-5 h-5 text-purple-400" />;
+      case 'volume':
+        return <TrendingUp className="w-5 h-5 text-green-400" />;
+      default:
+        return <DollarSign className="w-5 h-5 text-yellow-400" />;
+    }
   };
 
   return (
@@ -21,7 +27,7 @@ const StatsCards: React.FC<StatsCardsProps> = ({ metrics }) => {
           <div className="flex justify-between items-start mb-2">
             <span className="text-slate-400 text-sm font-medium">{metric.label}</span>
             <div className={`p-2 rounded-lg bg-slate-700/50`}>
-              {getIcon(metric.label)}
+              {getIcon(metric.icon)}
             </div>
           </div>
           <div className="flex items-baseline space-x-2">

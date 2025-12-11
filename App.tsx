@@ -5,12 +5,32 @@ import AnalysisCharts from './components/AnalysisCharts';
 import LeaderboardTable from './components/LeaderboardTable';
 import { StatMetric, TraderData, ApiResponse } from './types';
 import { BrainCircuit, RefreshCw, Swords } from 'lucide-react';
+import { translations, type Language } from './i18n';
+
+const LANGUAGE_OPTIONS: { code: Language; label: string }[] = [
+  { code: 'zh', label: '中文' },
+  { code: 'en', label: 'EN' },
+];
 
 const App: React.FC = () => {
   const [data, setData] = useState<TraderData[]>(RAW_DATA.data.data);
   const [loading, setLoading] = useState<boolean>(false);
   const [isLive, setIsLive] = useState<boolean>(false);
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [language, setLanguage] = useState<Language>('zh');
+
+  const locale = language === 'zh' ? 'zh-CN' : 'en-US';
+  const t = translations[language];
+
+  const currencyFormatter = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+      }),
+    [locale]
+  );
 
   const fetchData = async () => {
     setLoading(true);
@@ -77,34 +97,45 @@ const App: React.FC = () => {
     // Total Volume
     const totalVol = data.reduce((acc, curr) => acc + curr.totalVolume, 0);
 
+    const totalTradersLabel = `${totalTraders} ${t.stats.activeTradersSuffix}`;
+    const humanParticipants = `${humanTraders.length} ${t.stats.participantsSuffix}`;
+    const aiParticipants = `${aiTraders.length} ${t.stats.participantsSuffix}`;
+
     return [
       {
-        label: "Total Volume",
+        label: t.stats.totalVolume,
         value: `$${(totalVol / 1000000).toFixed(1)}M`,
-        subValue: `${totalTraders} Active Traders`,
-        trend: 'neutral'
+        subValue: totalTradersLabel,
+        trend: 'neutral',
+        icon: 'volume'
       },
       {
-        label: "Top Performer",
-        value: topTrader ? topTrader.user.nickName : 'N/A',
-        subValue: topTrader ? `$${topTrader.pnlTotal.toFixed(0)} Profit` : '-',
+        label: t.stats.topPerformer,
+        value: topTrader ? topTrader.user.nickName : t.general.notAvailable,
+        subValue: topTrader ? `${currencyFormatter.format(topTrader.pnlTotal)} ${t.stats.profitLabel}` : '-',
         trend: 'up',
-        color: topTrader?.user.userType === 'AI' ? 'text-purple-400' : 'text-blue-400'
+        color: topTrader?.user.userType === 'AI' ? 'text-purple-400' : 'text-blue-400',
+        icon: topTrader?.user.userType === 'AI' ? 'ai' : 'human'
       },
       {
-        label: "Avg Human PnL",
-        value: `$${avgHumanPnL.toFixed(0)}`,
-        subValue: `${humanTraders.length} Participants`,
-        trend: avgHumanPnL > 0 ? 'up' : 'down'
+        label: t.stats.avgHuman,
+        value: currencyFormatter.format(avgHumanPnL),
+        subValue: humanParticipants,
+        trend: avgHumanPnL > 0 ? 'up' : 'down',
+        icon: 'human'
       },
       {
-        label: "Avg AI PnL",
-        value: `$${avgAiPnL.toFixed(0)}`,
-        subValue: `${aiTraders.length} Participants`,
-        trend: avgAiPnL > 0 ? 'up' : 'down'
+        label: t.stats.avgAI,
+        value: currencyFormatter.format(avgAiPnL),
+        subValue: aiParticipants,
+        trend: avgAiPnL > 0 ? 'up' : 'down',
+        icon: 'ai'
       }
     ];
-  }, [data]);
+  }, [currencyFormatter, data, language]);
+
+  const formattedTime = lastUpdated.toLocaleTimeString(locale, { hour12: language === 'en' });
+  const statusText = loading ? t.header.updating : isLive ? t.header.live : t.header.cached;
 
   return (
     <div className="min-h-screen bg-slate-950 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black text-slate-100 p-4 md:p-8">
@@ -115,17 +146,37 @@ const App: React.FC = () => {
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white flex items-center gap-3">
               <BrainCircuit className="w-10 h-10 text-indigo-500" />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">
-                AI vs Human
+                {t.header.titleMain}
               </span>
-              <span className="text-slate-500 font-light">Wars</span>
+              <span className="text-slate-500 font-light">{t.header.titleSuffix}</span>
             </h1>
             <p className="text-slate-400 mt-2 text-sm md:text-base max-w-2xl">
-              Live performance tracking of algorithmic trading bots versus human traders. 
-              Who dominates the market today?
+              {t.header.description}
             </p>
           </div>
           
           <div className="flex flex-col md:items-end gap-4 w-full md:w-auto">
+            <div className="flex items-center justify-between md:justify-end gap-3 w-full">
+              <span className="text-xs text-slate-500 tracking-wider font-semibold">{t.header.languageLabel}</span>
+              <div className="flex bg-slate-900/60 rounded-full p-1">
+                {LANGUAGE_OPTIONS.map((option) => (
+                  <button
+                    key={option.code}
+                    type="button"
+                    onClick={() => setLanguage(option.code)}
+                    className={`px-3 py-1 text-xs font-semibold rounded-full transition ${
+                      language === option.code
+                        ? 'bg-slate-700 text-white shadow'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                    aria-pressed={language === option.code}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <a 
               href="https://www.asterdex.com/zh-CN/referral/4665f3" 
               target="_blank" 
@@ -133,11 +184,11 @@ const App: React.FC = () => {
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0 w-full md:w-auto text-sm md:text-base"
             >
               <Swords size={18} />
-              Join the Battle
+              {t.header.cta}
             </a>
 
             <div className="text-right hidden md:block">
-              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Data Status</div>
+              <div className="text-xs text-slate-500 tracking-wider font-semibold">{t.header.dataStatus}</div>
               <div className="flex items-center gap-4 justify-end mt-1">
                 <button 
                   onClick={fetchData}
@@ -145,7 +196,7 @@ const App: React.FC = () => {
                   className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors disabled:opacity-50"
                 >
                   <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
-                  {lastUpdated.toLocaleTimeString()}
+                  {formattedTime}
                 </button>
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
@@ -153,13 +204,13 @@ const App: React.FC = () => {
                     <span className={`relative inline-flex rounded-full h-2 w-2 ${isLive ? 'bg-emerald-500' : 'bg-amber-500'}`}></span>
                   </span>
                   <span className={`${isLive ? 'text-emerald-400' : 'text-amber-400'} text-sm font-medium`}>
-                    {loading ? 'Updating...' : isLive ? 'Live Feed' : 'Cached Data'}
+                    {statusText}
                   </span>
                 </div>
               </div>
               {!isLive && !loading && (
                 <div className="text-[10px] text-amber-500/80 mt-1">
-                  Using local fallback data (API unavailable)
+                  {t.header.fallback}
                 </div>
               )}
             </div>
@@ -170,13 +221,13 @@ const App: React.FC = () => {
         <StatsCards metrics={stats} />
 
         {/* Charts Section */}
-        <AnalysisCharts data={data} />
+        <AnalysisCharts data={data} texts={t.charts} />
 
         {/* Leaderboard */}
-        <LeaderboardTable data={data} />
+        <LeaderboardTable data={data} texts={t.leaderboard} language={language} />
         
         <footer className="mt-12 text-center text-slate-600 text-sm">
-          <p>© 2024 AI Trading Wars Dashboard. Data provided by AsterIndex.</p>
+          <p>{t.footer}</p>
         </footer>
       </div>
     </div>

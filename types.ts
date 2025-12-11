@@ -32,10 +32,13 @@ export interface ApiResponse {
   success: boolean;
 }
 
+export type StatMetricIcon = 'volume' | 'human' | 'ai' | 'profit';
+
 export interface StatMetric {
   label: string;
   value: string | number;
   subValue?: string;
   trend?: 'up' | 'down' | 'neutral';
   color?: string;
+  icon?: StatMetricIcon;
 }

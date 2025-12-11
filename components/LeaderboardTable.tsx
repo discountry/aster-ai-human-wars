@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { TraderData } from '../types';
 import { Trophy, TrendingUp, TrendingDown, Bot, User } from 'lucide-react';
+import type { LeaderboardTexts, Language } from '../i18n';
 
 interface LeaderboardTableProps {
   data: TraderData[];
+  texts: LeaderboardTexts;
+  language: Language;
 }
 
 type SortField = 'rank' | 'pnlTotal' | 'pnl24H' | 'totalVolume' | 'trades';
 type SortOrder = 'asc' | 'desc';
 
-const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
+const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, language }) => {
   const [filter, setFilter] = useState<'ALL' | 'HUMAN' | 'AI'>('ALL');
   const [sortField, setSortField] = useState<SortField>('rank');
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
+  const locale = language === 'zh' ? 'zh-CN' : 'en-US';
+  const currencyFormatter = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+      }),
+    [locale]
+  );
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -33,13 +46,7 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
     return (a[sortField] - b[sortField]) * multiplier;
   });
 
-  const formatCurrency = (val: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    }).format(val);
-  };
+  const formatCurrency = (val: number) => currencyFormatter.format(val);
 
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field) return <span className="w-4 h-4 ml-1 inline-block opacity-0 group-hover:opacity-30">↕</span>;
@@ -51,7 +58,7 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
       <div className="p-6 border-b border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4">
         <h3 className="text-xl font-bold text-white flex items-center gap-2">
           <Trophy className="w-5 h-5 text-yellow-500" />
-          Leaderboard
+          {texts.title}
         </h3>
         <div className="flex bg-slate-900/50 p-1 rounded-lg">
           {(['ALL', 'HUMAN', 'AI'] as const).map((type) => (
@@ -64,7 +71,11 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              {type === 'ALL' ? 'All Traders' : type === 'HUMAN' ? 'Humans' : 'AI Bots'}
+              {type === 'ALL'
+                ? texts.filters.all
+                : type === 'HUMAN'
+                ? texts.filters.human
+                : texts.filters.ai}
             </button>
           ))}
         </div>
@@ -78,32 +89,32 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
                 className="p-4 cursor-pointer hover:text-white group transition-colors w-20 text-center"
                 onClick={() => handleSort('rank')}
               >
-                <div className="flex items-center justify-center">Rank <SortIcon field="rank" /></div>
+                <div className="flex items-center justify-center">{texts.columns.rank} <SortIcon field="rank" /></div>
               </th>
-              <th className="p-4">Trader</th>
+              <th className="p-4">{texts.columns.trader}</th>
               <th 
                 className="p-4 text-right cursor-pointer hover:text-white group transition-colors"
                 onClick={() => handleSort('pnlTotal')}
               >
-                <div className="flex items-center justify-end">Total PnL <SortIcon field="pnlTotal" /></div>
+                <div className="flex items-center justify-end">{texts.columns.totalPnL} <SortIcon field="pnlTotal" /></div>
               </th>
                <th 
                 className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden md:table-cell"
                 onClick={() => handleSort('pnl24H')}
               >
-                <div className="flex items-center justify-end">24h PnL <SortIcon field="pnl24H" /></div>
+                <div className="flex items-center justify-end">{texts.columns.pnl24H} <SortIcon field="pnl24H" /></div>
               </th>
               <th 
                 className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden sm:table-cell"
                 onClick={() => handleSort('totalVolume')}
               >
-                <div className="flex items-center justify-end">Volume <SortIcon field="totalVolume" /></div>
+                <div className="flex items-center justify-end">{texts.columns.volume} <SortIcon field="totalVolume" /></div>
               </th>
               <th 
                 className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden lg:table-cell"
                 onClick={() => handleSort('trades')}
               >
-                <div className="flex items-center justify-end">Trades <SortIcon field="trades" /></div>
+                <div className="flex items-center justify-end">{texts.columns.trades} <SortIcon field="trades" /></div>
               </th>
             </tr>
           </thead>
@@ -137,12 +148,12 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
                       <div className="font-medium text-white flex items-center gap-2">
                         {trader.user.nickName}
                         {trader.user.userType === 'AI' ? (
-                          <span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 text-[10px] font-bold border border-purple-500/30 flex items-center gap-1">
-                            <Bot size={10} /> AI
+                          <span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 text-[10px] font-bold border border-purple-500/30  flex items-center gap-1">
+                            <Bot size={10} /> {texts.badgeAI}
                           </span>
                         ) : (
                            <span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 text-[10px] font-bold border border-blue-500/30 flex items-center gap-1">
-                            <User size={10} /> HUMAN
+                            <User size={10} /> {texts.badgeHuman}
                           </span>
                         )}
                       </div>
@@ -173,7 +184,7 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data }) => {
         </table>
       </div>
        <div className="p-4 border-t border-slate-700 text-center text-xs text-slate-500">
-        Showing top {sortedData.length} traders based on current filters
+        {texts.showing.replace('{count}', sortedData.length.toString())}
       </div>
     </div>
   );
