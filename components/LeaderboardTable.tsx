@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { TraderData } from '../types';
-import { Trophy, TrendingUp, TrendingDown, Bot, User } from 'lucide-react';
+import { Trophy, TrendingUp, TrendingDown, Bot, User, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
 import type { LeaderboardTexts, Language } from '../i18n';
 
 interface LeaderboardTableProps {
@@ -49,8 +49,26 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
   const formatCurrency = (val: number) => currencyFormatter.format(val);
 
   const SortIcon = ({ field }: { field: SortField }) => {
-    if (sortField !== field) return <span className="w-4 h-4 ml-1 inline-block opacity-0 group-hover:opacity-30">↕</span>;
-    return <span className="w-4 h-4 ml-1 inline-block text-blue-400">{sortOrder === 'asc' ? '↑' : '↓'}</span>;
+    const isActive = sortField === field;
+    const isAsc = sortOrder === 'asc';
+    
+    if (!isActive) {
+      return (
+        <ArrowUpDown 
+          className="w-3.5 h-3.5 ml-1.5 inline-block opacity-0 group-hover:opacity-50 transition-all duration-200 text-slate-400 group-hover:text-slate-300" 
+        />
+      );
+    }
+    
+    return (
+      <div className="ml-1.5 inline-flex items-center">
+        {isAsc ? (
+          <ArrowUp className="w-3.5 h-3.5 text-blue-400 transition-all duration-200" />
+        ) : (
+          <ArrowDown className="w-3.5 h-3.5 text-blue-400 transition-all duration-200" />
+        )}
+      </div>
+    );
   };
 
   return (
@@ -86,41 +104,41 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
           <thead>
             <tr className="bg-slate-900/50 text-slate-400 text-sm uppercase tracking-wider">
               <th 
-                className="p-4 cursor-pointer hover:text-white group transition-colors w-20 text-center"
+                className="p-4 cursor-pointer hover:text-white group transition-all duration-200 w-20 text-center hover:bg-slate-800/30 rounded-tl-lg"
                 onClick={() => handleSort('rank')}
               >
-                <div className="flex items-center justify-center">{texts.columns.rank} <SortIcon field="rank" /></div>
+                <div className="flex items-center justify-center gap-1">{texts.columns.rank} <SortIcon field="rank" /></div>
               </th>
               <th className="p-4">{texts.columns.trader}</th>
               <th 
-                className="p-4 text-right cursor-pointer hover:text-white group transition-colors"
+                className="p-4 text-right cursor-pointer hover:text-white group transition-all duration-200 hover:bg-slate-800/30"
                 onClick={() => handleSort('pnlTotal')}
               >
-                <div className="flex items-center justify-end">{texts.columns.totalPnL} <SortIcon field="pnlTotal" /></div>
+                <div className="flex items-center justify-end gap-1">{texts.columns.totalPnL} <SortIcon field="pnlTotal" /></div>
               </th>
               <th 
-                className="p-4 text-right cursor-pointer hover:text-white group transition-colors"
+                className="p-4 text-right cursor-pointer hover:text-white group transition-all duration-200 hover:bg-slate-800/30"
                 onClick={() => handleSort('balance')}
               >
-                <div className="flex items-center justify-end">{texts.columns.balance} <SortIcon field="balance" /></div>
+                <div className="flex items-center justify-end gap-1">{texts.columns.balance} <SortIcon field="balance" /></div>
               </th>
                <th 
-                className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden md:table-cell"
+                className="p-4 text-right cursor-pointer hover:text-white group transition-all duration-200 hover:bg-slate-800/30 hidden md:table-cell"
                 onClick={() => handleSort('pnl24H')}
               >
-                <div className="flex items-center justify-end">{texts.columns.pnl24H} <SortIcon field="pnl24H" /></div>
+                <div className="flex items-center justify-end gap-1">{texts.columns.pnl24H} <SortIcon field="pnl24H" /></div>
               </th>
               <th 
-                className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden sm:table-cell"
+                className="p-4 text-right cursor-pointer hover:text-white group transition-all duration-200 hover:bg-slate-800/30 hidden sm:table-cell"
                 onClick={() => handleSort('totalVolume')}
               >
-                <div className="flex items-center justify-end">{texts.columns.volume} <SortIcon field="totalVolume" /></div>
+                <div className="flex items-center justify-end gap-1">{texts.columns.volume} <SortIcon field="totalVolume" /></div>
               </th>
               <th 
-                className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden lg:table-cell"
+                className="p-4 text-right cursor-pointer hover:text-white group transition-all duration-200 hover:bg-slate-800/30 hidden lg:table-cell rounded-tr-lg"
                 onClick={() => handleSort('trades')}
               >
-                <div className="flex items-center justify-end">{texts.columns.trades} <SortIcon field="trades" /></div>
+                <div className="flex items-center justify-end gap-1">{texts.columns.trades} <SortIcon field="trades" /></div>
               </th>
             </tr>
           </thead>
