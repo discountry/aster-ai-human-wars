@@ -9,7 +9,9 @@ const classicScriptPlugin = () => ({
       return html;
     }
 
-    return html.replace(/\s+type=["']module["']/g, '');
+    return html
+      .replace(/\s+type=["']module["']/g, '')
+      .replace(/<script([^>]*?)\bcrossorigin/g, '<script$1 defer crossorigin');
   },
 });
 
