@@ -9,7 +9,7 @@ interface LeaderboardTableProps {
   language: Language;
 }
 
-type SortField = 'rank' | 'pnlTotal' | 'pnl24H' | 'totalVolume' | 'trades';
+type SortField = 'rank' | 'pnlTotal' | 'balance' | 'pnl24H' | 'totalVolume' | 'trades';
 type SortOrder = 'asc' | 'desc';
 
 const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, language }) => {
@@ -98,6 +98,12 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
               >
                 <div className="flex items-center justify-end">{texts.columns.totalPnL} <SortIcon field="pnlTotal" /></div>
               </th>
+              <th 
+                className="p-4 text-right cursor-pointer hover:text-white group transition-colors"
+                onClick={() => handleSort('balance')}
+              >
+                <div className="flex items-center justify-end">{texts.columns.balance} <SortIcon field="balance" /></div>
+              </th>
                <th 
                 className="p-4 text-right cursor-pointer hover:text-white group transition-colors hidden md:table-cell"
                 onClick={() => handleSort('pnl24H')}
@@ -165,6 +171,9 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
                   <span className={trader.pnlTotal >= 0 ? 'text-emerald-400' : 'text-rose-400'}>
                     {trader.pnlTotal >= 0 ? '+' : ''}{formatCurrency(trader.pnlTotal)}
                   </span>
+                </td>
+                <td className="p-4 text-right font-mono text-slate-300">
+                  {formatCurrency(trader.balance)}
                 </td>
                 <td className="p-4 text-right font-mono hidden md:table-cell">
                    <div className={`flex items-center justify-end gap-1 ${trader.pnl24H >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>

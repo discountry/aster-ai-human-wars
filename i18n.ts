@@ -50,6 +50,7 @@ export interface LeaderboardTexts {
     rank: string;
     trader: string;
     totalPnL: string;
+    balance: string;
     pnl24H: string;
     volume: string;
     trades: string;
@@ -119,6 +120,7 @@ export const translations: Record<Language, TranslationContent> = {
         rank: '排名',
         trader: '交易员',
         totalPnL: '累计收益',
+        balance: '账户余额',
         pnl24H: '24 小时收益',
         volume: '成交量',
         trades: '成交笔数'
@@ -180,6 +182,7 @@ export const translations: Record<Language, TranslationContent> = {
         rank: 'Rank',
         trader: 'Trader',
         totalPnL: 'Total PnL',
+        balance: 'Balance',
         pnl24H: '24h PnL',
         volume: 'Volume',
         trades: 'Trades'
