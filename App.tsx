@@ -4,7 +4,7 @@ import StatsCards from './components/StatsCards';
 import AnalysisCharts from './components/AnalysisCharts';
 import LeaderboardTable from './components/LeaderboardTable';
 import { StatMetric, TraderData, ApiResponse } from './types';
-import { BrainCircuit, RefreshCw } from 'lucide-react';
+import { BrainCircuit, RefreshCw, Swords } from 'lucide-react';
 
 const App: React.FC = () => {
   const [data, setData] = useState<TraderData[]>(RAW_DATA.data.data);
@@ -110,8 +110,8 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-slate-950 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black text-slate-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-          <div>
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
+          <div className="flex-1">
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white flex items-center gap-3">
               <BrainCircuit className="w-10 h-10 text-indigo-500" />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">
@@ -124,32 +124,45 @@ const App: React.FC = () => {
               Who dominates the market today?
             </p>
           </div>
-          <div className="text-right hidden md:block">
-            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Data Status</div>
-            <div className="flex items-center gap-4 justify-end mt-1">
-              <button 
-                onClick={fetchData}
-                disabled={loading}
-                className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors disabled:opacity-50"
-              >
-                <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
-                {lastUpdated.toLocaleTimeString()}
-              </button>
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isLive ? 'bg-emerald-400' : 'bg-amber-400'}`}></span>
-                  <span className={`relative inline-flex rounded-full h-2 w-2 ${isLive ? 'bg-emerald-500' : 'bg-amber-500'}`}></span>
-                </span>
-                <span className={`${isLive ? 'text-emerald-400' : 'text-amber-400'} text-sm font-medium`}>
-                  {loading ? 'Updating...' : isLive ? 'Live Feed' : 'Cached Data'}
-                </span>
+          
+          <div className="flex flex-col md:items-end gap-4 w-full md:w-auto">
+            <a 
+              href="https://www.asterdex.com/zh-CN/referral/4665f3" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0 w-full md:w-auto text-sm md:text-base"
+            >
+              <Swords size={18} />
+              Join the Battle
+            </a>
+
+            <div className="text-right hidden md:block">
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Data Status</div>
+              <div className="flex items-center gap-4 justify-end mt-1">
+                <button 
+                  onClick={fetchData}
+                  disabled={loading}
+                  className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors disabled:opacity-50"
+                >
+                  <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
+                  {lastUpdated.toLocaleTimeString()}
+                </button>
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isLive ? 'bg-emerald-400' : 'bg-amber-400'}`}></span>
+                    <span className={`relative inline-flex rounded-full h-2 w-2 ${isLive ? 'bg-emerald-500' : 'bg-amber-500'}`}></span>
+                  </span>
+                  <span className={`${isLive ? 'text-emerald-400' : 'text-amber-400'} text-sm font-medium`}>
+                    {loading ? 'Updating...' : isLive ? 'Live Feed' : 'Cached Data'}
+                  </span>
+                </div>
               </div>
+              {!isLive && !loading && (
+                <div className="text-[10px] text-amber-500/80 mt-1">
+                  Using local fallback data (API unavailable)
+                </div>
+              )}
             </div>
-            {!isLive && !loading && (
-              <div className="text-[10px] text-amber-500/80 mt-1">
-                Using local fallback data (API unavailable)
-              </div>
-            )}
           </div>
         </header>
 
