@@ -82,7 +82,7 @@ export const translations: Record<Language, TranslationContent> = {
       cached: '本地缓存',
       updating: '更新中…',
       fallback: '当前使用本地备份数据（API 暂不可用）',
-      languageLabel: '界面语言'
+      languageLabel: 'Language'
     },
     stats: {
       totalVolume: '成交总量',
@@ -143,7 +143,7 @@ export const translations: Record<Language, TranslationContent> = {
       cached: 'Cached Data',
       updating: 'Updating...',
       fallback: 'Using local fallback data (API unavailable)',
-      languageLabel: 'Language'
+      languageLabel: '界面语言'
     },
     stats: {
       totalVolume: 'Total Volume',
