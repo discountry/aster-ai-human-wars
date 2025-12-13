@@ -21,6 +21,7 @@ import type { ChartTexts } from '../i18n';
 interface AnalysisChartsProps {
   data: TraderData[];
   texts: ChartTexts;
+  includeScatter?: boolean;
 }
 
 const COLORS = ['#60A5FA', '#A78BFA']; // Blue for Human, Purple for AI
@@ -84,7 +85,83 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
   );
 };
 
-const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
+interface ScatterPoint {
+  x: number;
+  y: number;
+  z: number;
+  name: string;
+}
+
+type ScatterDatum = ScatterPoint | null;
+
+interface TradeFrequencyPnLCardProps {
+  data: TraderData[];
+  texts: ChartTexts;
+}
+
+export const TradeFrequencyPnLCard: React.FC<TradeFrequencyPnLCardProps> = ({ data, texts }) => {
+  // Scatter Data (Trades vs PnL)
+  const formatScatterPoint = (trader: TraderData): ScatterPoint => ({
+    x: trader.trades,
+    y: trader.pnlTotal,
+    z: trader.totalVolume,
+    name: trader.user.nickName,
+  });
+
+  // Keep arrays aligned with the original data indexes so the tooltip index stays in sync.
+  const scatterDataHuman: ScatterDatum[] = data.map((trader) =>
+    trader.user.userType === 'HUMAN' ? formatScatterPoint(trader) : null
+  );
+
+  const scatterDataAI: ScatterDatum[] = data.map((trader) =>
+    trader.user.userType === 'AI' ? formatScatterPoint(trader) : null
+  );
+
+  return (
+    <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 shadow-lg mb-8">
+      <h3 className="text-lg font-semibold mb-4 text-slate-200">{texts.scatterTitle}</h3>
+      <p className="text-xs text-slate-400 mb-4">{texts.scatterSubtitle}</p>
+      <div className="h-80">
+        <ResponsiveContainer width="100%" height="100%">
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+            <XAxis
+              type="number"
+              dataKey="x"
+              name={texts.axisTrades}
+              stroke="#94a3b8"
+              label={{
+                value: texts.axisTrades,
+                position: 'insideBottomRight',
+                offset: -10,
+                fill: '#94a3b8',
+              }}
+            />
+            <YAxis
+              type="number"
+              dataKey="y"
+              name={texts.axisPnL}
+              stroke="#94a3b8"
+              label={{
+                value: texts.axisPnL,
+                angle: -90,
+                position: 'insideLeft',
+                fill: '#94a3b8',
+              }}
+            />
+            <ZAxis type="number" dataKey="z" range={[50, 400]} name={texts.axisVolume} />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} content={<CustomTooltip />} />
+            <Legend />
+            <Scatter name={texts.human} data={scatterDataHuman} fill={COLORS[0]} fillOpacity={0.6} shape="circle" />
+            <Scatter name={texts.ai} data={scatterDataAI} fill={COLORS[1]} fillOpacity={0.6} shape="triangle" />
+          </ScatterChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
+const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts, includeScatter = true }) => {
   // 1. Data for Pie Chart (PnL Distribution)
   let profitableCount = 0;
   let lossCount = 0;
@@ -124,23 +201,6 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
   const barData = [
     { name: texts.avgTotalPnL, human: Math.round(avgHumanPnL), ai: Math.round(avgAiPnL) }
   ];
-
-  // 3. Scatter Data (Trades vs PnL)
-  const formatScatterPoint = (trader: TraderData) => ({
-    x: trader.trades,
-    y: trader.pnlTotal,
-    z: trader.totalVolume,
-    name: trader.user.nickName,
-  });
-
-  // Keep arrays aligned with the original data indexes so the tooltip index stays in sync.
-  const scatterDataHuman = data.map((trader) =>
-    trader.user.userType === 'HUMAN' ? formatScatterPoint(trader) : null
-  );
-
-  const scatterDataAI = data.map((trader) =>
-    trader.user.userType === 'AI' ? formatScatterPoint(trader) : null
-  );
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -188,25 +248,11 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
         </div>
       </div>
 
-       {/* Chart 3: Scatter Performance */}
-       <div className="col-span-1 lg:col-span-2 bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 shadow-lg">
-        <h3 className="text-lg font-semibold mb-4 text-slate-200">{texts.scatterTitle}</h3>
-        <p className="text-xs text-slate-400 mb-4">{texts.scatterSubtitle}</p>
-        <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                <XAxis type="number" dataKey="x" name={texts.axisTrades} stroke="#94a3b8" label={{ value: texts.axisTrades, position: 'insideBottomRight', offset: -10, fill: '#94a3b8' }} />
-                <YAxis type="number" dataKey="y" name={texts.axisPnL} stroke="#94a3b8" label={{ value: texts.axisPnL, angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
-                <ZAxis type="number" dataKey="z" range={[50, 400]} name={texts.axisVolume} />
-                <Tooltip cursor={{ strokeDasharray: '3 3' }} content={<CustomTooltip />} />
-                <Legend />
-                <Scatter name={texts.human} data={scatterDataHuman} fill={COLORS[0]} fillOpacity={0.6} shape="circle" />
-                <Scatter name={texts.ai} data={scatterDataAI} fill={COLORS[1]} fillOpacity={0.6} shape="triangle" />
-            </ScatterChart>
-            </ResponsiveContainer>
+      {includeScatter ? (
+        <div className="col-span-1 lg:col-span-2">
+          <TradeFrequencyPnLCard data={data} texts={texts} />
         </div>
-      </div>
+      ) : null}
     </div>
   );
 };

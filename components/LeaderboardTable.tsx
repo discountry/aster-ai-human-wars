@@ -43,7 +43,13 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
 
   const sortedData = [...filteredData].sort((a, b) => {
     const multiplier = sortOrder === 'asc' ? 1 : -1;
-    return (a[sortField] - b[sortField]) * multiplier;
+    const primary = (a[sortField] - b[sortField]) * multiplier;
+    if (primary !== 0) return primary;
+    // Official rule: if PnL ties, higher valid trading volume ranks higher.
+    if (sortField === 'pnlTotal') {
+      return b.totalVolume - a.totalVolume;
+    }
+    return 0;
   });
 
   const formatCurrency = (val: number) => currencyFormatter.format(val);
@@ -78,6 +84,10 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
           <Trophy className="w-5 h-5 text-yellow-500" />
           {texts.title}
         </h3>
+        <div className="text-[11px] text-slate-500 sm:text-right">
+          <div>{texts.provisionalNote}</div>
+          <div>{texts.tieBreakNote}</div>
+        </div>
         <div className="flex bg-slate-900/50 p-1 rounded-lg">
           {(['ALL', 'HUMAN', 'AI'] as const).map((type) => (
             <button

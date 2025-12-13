@@ -383,6 +383,7 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
         <div>
           <h3 className="text-xl font-bold text-white">{texts.title}</h3>
           <p className="text-xs text-slate-400 mt-1">{texts.subtitle}</p>
+          <div className="mt-2 text-[11px] text-slate-500">{texts.provisionalNote}</div>
           <div className="mt-2 text-[11px] text-slate-500">
             {texts.summary
               .replace('{n}', filteredData.length.toString())
