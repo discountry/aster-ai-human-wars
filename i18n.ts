@@ -32,11 +32,53 @@ export interface ChartTexts {
   axisPnL: string;
   axisVolume: string;
   profitable: string;
+  liquidated: string;
   loss: string;
   inactive: string;
   avgTotalPnL: string;
   human: string;
   ai: string;
+}
+
+export interface CorrelationTexts {
+  title: string;
+  subtitle: string;
+  summary: string; // placeholders: {n}, {active}, {total}
+  filters: {
+    all: string;
+    human: string;
+    ai: string;
+  };
+  activeOnly: string;
+  metricLabel: string;
+  metrics: {
+    pnlTotal: string;
+    pnl24H: string;
+    pnlPerVolBps: string;
+    pnlPerTrade: string;
+  };
+  tableTitle: string;
+  tableHeaders: {
+    pair: string;
+    pearson: string;
+    spearman: string;
+    n: string;
+  };
+  pairs: {
+    volTrades: string;
+    volMetric: string; // placeholder: {metric}
+    tradesMetric: string; // placeholder: {metric}
+  };
+  chartTitle: string;
+  chartSubtitle: string; // placeholder: {metric}
+  axisVolume: string;
+  axisTrades: string;
+  humanLabel: string;
+  aiLabel: string;
+  tooltip: {
+    volume: string;
+    trades: string;
+  };
 }
 
 export interface LeaderboardTexts {
@@ -64,6 +106,7 @@ export interface TranslationContent {
   header: HeaderTexts;
   stats: StatsTexts;
   charts: ChartTexts;
+  correlation: CorrelationTexts;
   leaderboard: LeaderboardTexts;
   footer: string;
   general: {
@@ -103,11 +146,52 @@ export const translations: Record<Language, TranslationContent> = {
       axisPnL: '总收益（美元）',
       axisVolume: '成交量',
       profitable: '盈利',
+      liquidated: '爆仓',
       loss: '亏损',
       inactive: '零成交',
       avgTotalPnL: '平均总收益',
       human: '人类',
       ai: 'AI'
+    },
+    correlation: {
+      title: '相关性分析',
+      subtitle: '基于榜单横截面数据：成交量、成交笔数与盈亏指标的关系。',
+      summary: '样本：{n}（活跃 {active} / 总计 {total}）',
+      filters: {
+        all: '全部',
+        human: '仅人类',
+        ai: '仅 AI',
+      },
+      activeOnly: '仅活跃（成交量>0 且笔数>0）',
+      metricLabel: '指标',
+      metrics: {
+        pnlTotal: '累计收益',
+        pnl24H: '24 小时收益',
+        pnlPerVolBps: '收益/成交量（bps）',
+        pnlPerTrade: '收益/笔',
+      },
+      tableTitle: '相关系数',
+      tableHeaders: {
+        pair: '维度',
+        pearson: 'Pearson',
+        spearman: 'Spearman',
+        n: 'N',
+      },
+      pairs: {
+        volTrades: '成交量 ↔ 成交笔数',
+        volMetric: '成交量 ↔ {metric}',
+        tradesMetric: '成交笔数 ↔ {metric}',
+      },
+      chartTitle: '成交量 vs 成交笔数（点色=指标）',
+      chartSubtitle: '点色表示 {metric}，点大小表示成交量。',
+      axisVolume: '成交量（log）',
+      axisTrades: '成交笔数（log）',
+      humanLabel: '人类',
+      aiLabel: 'AI',
+      tooltip: {
+        volume: '成交量',
+        trades: '成交笔数',
+      },
     },
     leaderboard: {
       title: '排行榜',
@@ -165,11 +249,52 @@ export const translations: Record<Language, TranslationContent> = {
       axisPnL: 'PnL ($)',
       axisVolume: 'Volume',
       profitable: 'Profitable',
+      liquidated: 'Liquidated',
       loss: 'Loss',
       inactive: 'Inactive (0 Vol)',
       avgTotalPnL: 'Avg Total PnL',
       human: 'Humans',
       ai: 'AI Bots'
+    },
+    correlation: {
+      title: 'Correlation Analysis',
+      subtitle: 'Cross-sectional view: how volume and trade count relate to P&L metrics.',
+      summary: 'Samples: {n} (active {active} / total {total})',
+      filters: {
+        all: 'All',
+        human: 'Humans',
+        ai: 'AI',
+      },
+      activeOnly: 'Active only (volume>0 & trades>0)',
+      metricLabel: 'Metric',
+      metrics: {
+        pnlTotal: 'Total PnL',
+        pnl24H: '24h PnL',
+        pnlPerVolBps: 'PnL / Volume (bps)',
+        pnlPerTrade: 'PnL / Trade',
+      },
+      tableTitle: 'Correlations',
+      tableHeaders: {
+        pair: 'Pair',
+        pearson: 'Pearson',
+        spearman: 'Spearman',
+        n: 'N',
+      },
+      pairs: {
+        volTrades: 'Volume ↔ Trades',
+        volMetric: 'Volume ↔ {metric}',
+        tradesMetric: 'Trades ↔ {metric}',
+      },
+      chartTitle: 'Volume vs Trades (color = metric)',
+      chartSubtitle: 'Point color encodes {metric}; bubble size encodes volume.',
+      axisVolume: 'Volume (log)',
+      axisTrades: 'Trades (log)',
+      humanLabel: 'Humans',
+      aiLabel: 'AI',
+      tooltip: {
+        volume: 'Volume',
+        trades: 'Trades',
+      },
     },
     leaderboard: {
       title: 'Leaderboard',

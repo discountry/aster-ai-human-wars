@@ -104,7 +104,7 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ data, texts, langua
           <thead>
             <tr className="bg-slate-900/50 text-slate-400 text-sm uppercase tracking-wider">
               <th 
-                className="p-4 cursor-pointer hover:text-white group transition-all duration-200 w-20 text-center hover:bg-slate-800/30 rounded-tl-lg"
+                className="p-4 cursor-pointer hover:text-white group transition-all duration-200 w-22 text-center hover:bg-slate-800/30 rounded-tl-lg"
                 onClick={() => handleSort('rank')}
               >
                 <div className="flex items-center justify-center gap-1">{texts.columns.rank} <SortIcon field="rank" /></div>

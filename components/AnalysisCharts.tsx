@@ -26,32 +26,60 @@ interface AnalysisChartsProps {
 const COLORS = ['#60A5FA', '#A78BFA']; // Blue for Human, Purple for AI
 const PROFIT_COLOR = '#10B981'; // Emerald-500
 const LOSS_COLOR = '#EF4444';   // Red-500
+const LIQUIDATED_COLOR = '#991B1B'; // Red-800 (deep red)
 const INACTIVE_COLOR = '#64748B'; // Slate-500
+const LIQUIDATED_BALANCE_THRESHOLD = 1; // <$1 treated as "zero" (dust) in sample data
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+type TooltipPayloadItem = {
+  name?: string;
+  value?: unknown;
+  color?: string;
+  payload?: unknown;
+};
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: TooltipPayloadItem[];
+  label?: string | number;
+}
+
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === 'object' && value !== null;
+
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label }) => {
   if (!active || !payload || !payload.length) {
     return null;
   }
 
-  const filteredPayload = payload.filter(
-    (entry: any) => entry && entry.payload
-  );
+  const filteredPayload = payload.filter((entry) => entry.payload != null);
   const displayPayload = filteredPayload.length > 0 ? filteredPayload : payload;
   const titleEntry = displayPayload[0];
-  const title =
-    titleEntry?.payload?.name ||
-    label ||
-    titleEntry?.name ||
-    '';
+  const payloadObj = titleEntry?.payload != null && isRecord(titleEntry.payload) ? titleEntry.payload : null;
+  const payloadName = payloadObj && typeof payloadObj.name === 'string' ? payloadObj.name : null;
+  const title = payloadName ?? label ?? titleEntry?.name ?? '';
 
   return (
     <div className="bg-slate-800 border border-slate-700 p-3 rounded shadow-xl text-xs">
       <p className="font-bold text-slate-200 mb-1">{title}</p>
-      {displayPayload.map((entry: any, index: number) => (
-        <p key={index} style={{ color: entry.payload?.color || entry.color }}>
-          {entry.name}: {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
-        </p>
-      ))}
+      {displayPayload.map((entry, index) => {
+        const entryPayloadColor =
+          entry.payload != null && isRecord(entry.payload) && typeof entry.payload.color === 'string'
+            ? entry.payload.color
+            : null;
+        const color = entryPayloadColor ?? entry.color ?? '#94a3b8';
+        const value =
+          typeof entry.value === 'number'
+            ? entry.value.toLocaleString()
+            : entry.value == null
+              ? '-'
+              : String(entry.value);
+
+        return (
+          <p key={`${entry.name ?? 'item'}-${index}`} style={{ color }}>
+            {entry.name}: {value}
+          </p>
+        );
+      })}
     </div>
   );
 };
@@ -60,10 +88,14 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
   // 1. Data for Pie Chart (PnL Distribution)
   let profitableCount = 0;
   let lossCount = 0;
+  let liquidatedCount = 0;
   let inactiveCount = 0;
 
   data.forEach(d => {
-    if (d.totalVolume === 0) {
+    // Liquidated/blown up users can have tiny residual "dust" balances in sample data.
+    if (d.balance < LIQUIDATED_BALANCE_THRESHOLD) {
+      liquidatedCount++;
+    } else if (d.totalVolume === 0) {
       inactiveCount++;
     } else if (d.pnlTotal >= 0) {
       profitableCount++;
@@ -74,6 +106,7 @@ const AnalysisCharts: React.FC<AnalysisChartsProps> = ({ data, texts }) => {
 
   const pieData = [
     { name: texts.profitable, value: profitableCount, color: PROFIT_COLOR },
+    { name: texts.liquidated, value: liquidatedCount, color: LIQUIDATED_COLOR },
     { name: texts.loss, value: lossCount, color: LOSS_COLOR },
     { name: texts.inactive, value: inactiveCount, color: INACTIVE_COLOR },
   ].filter(d => d.value > 0);

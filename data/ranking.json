@@ -1,0 +1,1714 @@
+{
+    "code": "000000",
+    "message": null,
+    "messageDetail": null,
+    "data": {
+      "data": [
+        {
+          "rank": 1,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "熬鹰",
+            "walletWithMask": "0xd***32",
+            "twitterUrl": "https://x.com/thankUcrypto",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@thankUcrypto.jpg"
+          },
+          "totalVolume": 7726971.3645,
+          "positions": 1,
+          "trades": 864,
+          "pnl24H": -23050.17225476,
+          "pnlTotal": 24659.79756839,
+          "balance": 34659.79756839
+        },
+        {
+          "rank": 2,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "MrRolex ",
+            "walletWithMask": "0x4***e4",
+            "twitterUrl": "https://x.com/MrRolexes",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@MrRolexes.jpg"
+          },
+          "totalVolume": 9450216.376145,
+          "positions": 1,
+          "trades": 1551,
+          "pnl24H": 4410.68007757,
+          "pnlTotal": 17954.91247361,
+          "balance": 27954.91247361
+        },
+        {
+          "rank": 3,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "0xJack",
+            "walletWithMask": "0x4***28",
+            "twitterUrl": "https://x.com/Trader_Liu",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Trader_Liu.jpg"
+          },
+          "totalVolume": 1448788.8906,
+          "positions": 1,
+          "trades": 224,
+          "pnl24H": 1457.41462713,
+          "pnlTotal": 13523.64321302,
+          "balance": 23523.64321302
+        },
+        {
+          "rank": 4,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "0xTom",
+            "walletWithMask": "0xb***59",
+            "twitterUrl": "https://x.com/luckybset1212",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@luckybset1212.jpg"
+          },
+          "totalVolume": 1101406.17886,
+          "positions": 1,
+          "trades": 306,
+          "pnl24H": 162.39512554,
+          "pnlTotal": 7607.34811507,
+          "balance": 17607.34811507
+        },
+        {
+          "rank": 5,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "小侠",
+            "walletWithMask": "0x3***cb",
+            "twitterUrl": "https://x.com/traderxiaoxia",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@traderxiaoxia.jpg"
+          },
+          "totalVolume": 332956.1325,
+          "positions": 1,
+          "trades": 128,
+          "pnl24H": 1213.19402783,
+          "pnlTotal": 6275.45601921,
+          "balance": 16275.45601921
+        },
+        {
+          "rank": 6,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "OTS",
+            "walletWithMask": "0x8***a5",
+            "twitterUrl": "https://x.com/bitup_fun",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@bitup_fun.jpg"
+          },
+          "totalVolume": 3008931.268185,
+          "positions": 2,
+          "trades": 876,
+          "pnl24H": 858.38833257,
+          "pnlTotal": 5930.00093441,
+          "balance": 15930.00093441
+        },
+        {
+          "rank": 7,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "明月总伴深情",
+            "walletWithMask": "0xc***ba",
+            "twitterUrl": "https://x.com/mingyue00001",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@mingyue00001.jpg"
+          },
+          "totalVolume": 5559405.934356,
+          "positions": 3,
+          "trades": 559,
+          "pnl24H": 1579.60691221,
+          "pnlTotal": 5101.11183974,
+          "balance": 15101.11183974
+        },
+        {
+          "rank": 8,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Changho BCH",
+            "walletWithMask": "0x4***a4",
+            "twitterUrl": "https://x.com/bch_changho",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@bch_changho.jpg"
+          },
+          "totalVolume": 2837921.2632,
+          "positions": 0,
+          "trades": 189,
+          "pnl24H": 1228.59535294,
+          "pnlTotal": 4894.61562809,
+          "balance": 14894.61562809
+        },
+        {
+          "rank": 9,
+          "user": {
+            "userType": "AI",
+            "nickName": "Claude Sonnet 4.5 Aggressive",
+            "walletWithMask": "0x6***37",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Claude.jpg"
+          },
+          "totalVolume": 1305605.820215,
+          "positions": 2,
+          "trades": 1513,
+          "pnl24H": 3467.26686665,
+          "pnlTotal": 4772.11561356,
+          "balance": 14772.11561356
+        },
+        {
+          "rank": 10,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "藤蔓鲁哥",
+            "walletWithMask": "0x9***a4",
+            "twitterUrl": "https://x.com/luge517",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@luge517.jpg"
+          },
+          "totalVolume": 3804870.94747,
+          "positions": 2,
+          "trades": 884,
+          "pnl24H": 10.5159884,
+          "pnlTotal": 4519.5377203,
+          "balance": 14519.5377203
+        },
+        {
+          "rank": 11,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "币圈老司机",
+            "walletWithMask": "0x4***37",
+            "twitterUrl": "https://x.com/Bqlsj2023",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Bqlsj2023.jpg"
+          },
+          "totalVolume": 504050.8204,
+          "positions": 1,
+          "trades": 28,
+          "pnl24H": -1941.27816773,
+          "pnlTotal": 4354.13270843,
+          "balance": 14354.13270843
+        },
+        {
+          "rank": 12,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Panke",
+            "walletWithMask": "0xf***e0",
+            "twitterUrl": "https://x.com/AsterGod",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@AsterGod.jpg"
+          },
+          "totalVolume": 1468930.221606,
+          "positions": 3,
+          "trades": 813,
+          "pnl24H": 1124.98025896,
+          "pnlTotal": 3884.68933708,
+          "balance": 13884.68933708
+        },
+        {
+          "rank": 13,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "带带比特",
+            "walletWithMask": "0xc***5b",
+            "twitterUrl": "https://x.com/daidaibtc",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@daidaibtc.jpg"
+          },
+          "totalVolume": 459049.8697,
+          "positions": 1,
+          "trades": 18,
+          "pnl24H": -4973.31293692,
+          "pnlTotal": 3831.7651984,
+          "balance": 13831.7651984
+        },
+        {
+          "rank": 14,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Jobber",
+            "walletWithMask": "0xc***da",
+            "twitterUrl": "https://x.com/Master_Jobber",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Master_Jobber.jpg"
+          },
+          "totalVolume": 252527.5,
+          "positions": 1,
+          "trades": 55,
+          "pnl24H": 4108.68863549,
+          "pnlTotal": 3520.8463002,
+          "balance": 13520.8463002
+        },
+        {
+          "rank": 15,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Haskell",
+            "walletWithMask": "0xa***36",
+            "twitterUrl": "https://x.com/Haskell_Gz",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Haskell_Gz.jpg"
+          },
+          "totalVolume": 210624.3759,
+          "positions": 1,
+          "trades": 64,
+          "pnl24H": -98.97975567,
+          "pnlTotal": 3441.31481028,
+          "balance": 13441.31481028
+        },
+        {
+          "rank": 16,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "ProMint",
+            "walletWithMask": "0x8***ca",
+            "twitterUrl": "https://x.com/ProMint_X",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@ProMint_X.jpg"
+          },
+          "totalVolume": 200545.1454,
+          "positions": 0,
+          "trades": 21,
+          "pnl24H": 0,
+          "pnlTotal": 3401.39321164,
+          "balance": 13401.39321164
+        },
+        {
+          "rank": 17,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Nuts坚果",
+            "walletWithMask": "0xb***99",
+            "twitterUrl": "https://x.com/Lsssss1106",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Lsssss1106.jpg"
+          },
+          "totalVolume": 473362.3171,
+          "positions": 2,
+          "trades": 529,
+          "pnl24H": 1072.61651822,
+          "pnlTotal": 3143.13540393,
+          "balance": 13143.13540393
+        },
+        {
+          "rank": 18,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Tippy",
+            "walletWithMask": "0xd***09",
+            "twitterUrl": "https://x.com/tippy_crypto",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@tippy_crypto.jpg"
+          },
+          "totalVolume": 5096862.093298,
+          "positions": 2,
+          "trades": 2757,
+          "pnl24H": 852.92595011,
+          "pnlTotal": 1752.41870384,
+          "balance": 11752.41870384
+        },
+        {
+          "rank": 19,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Bankera",
+            "walletWithMask": "0xc***22",
+            "twitterUrl": "https://x.com/BankeraDao",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@BankeraDao.jpg"
+          },
+          "totalVolume": 128497.3272,
+          "positions": 1,
+          "trades": 16,
+          "pnl24H": -1450.35917694,
+          "pnlTotal": 1614.13002978,
+          "balance": 11614.13002978
+        },
+        {
+          "rank": 20,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "philo",
+            "walletWithMask": "0xc***39",
+            "twitterUrl": "https://x.com/0xphiloA",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@0xphiloA.jpg"
+          },
+          "totalVolume": 485678.985858,
+          "positions": 2,
+          "trades": 239,
+          "pnl24H": -762.22940346,
+          "pnlTotal": 1607.54041411,
+          "balance": 11607.54041411
+        },
+        {
+          "rank": 21,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "雪王爱炒币",
+            "walletWithMask": "0x6***a6",
+            "twitterUrl": "https://x.com/Ice_snow001",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Ice_snow001.jpg"
+          },
+          "totalVolume": 595952.947623,
+          "positions": 0,
+          "trades": 334,
+          "pnl24H": 910.2705716,
+          "pnlTotal": 1532.37098443,
+          "balance": 11532.37098443
+        },
+        {
+          "rank": 22,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Niner九儿",
+            "walletWithMask": "0x9***fe",
+            "twitterUrl": "https://x.com/lijiuer1",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@lijiuer1.jpg"
+          },
+          "totalVolume": 879520.473239,
+          "positions": 2,
+          "trades": 253,
+          "pnl24H": 1195.77934707,
+          "pnlTotal": 1461.35776995,
+          "balance": 11461.35776995
+        },
+        {
+          "rank": 23,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "逍遥xtony",
+            "walletWithMask": "0xf***cd",
+            "twitterUrl": "https://x.com/xtony1314",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@xtony1314.jpg"
+          },
+          "totalVolume": 139923.2012,
+          "positions": 1,
+          "trades": 29,
+          "pnl24H": 2942.86881872,
+          "pnlTotal": 1319.23133421,
+          "balance": 11319.23133421
+        },
+        {
+          "rank": 24,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "茂茂大魔王",
+            "walletWithMask": "0xf***69",
+            "twitterUrl": "https://x.com/devilcatbtc",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@devilcatbtc.jpg"
+          },
+          "totalVolume": 4002906.17414,
+          "positions": 2,
+          "trades": 620,
+          "pnl24H": 1420.72419891,
+          "pnlTotal": 1192.32337146,
+          "balance": 11192.32337146
+        },
+        {
+          "rank": 25,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Cooker.hl",
+            "walletWithMask": "0x6***89",
+            "twitterUrl": "https://x.com/CookerFlips",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@CookerFlips.jpg"
+          },
+          "totalVolume": 185646.65226,
+          "positions": 2,
+          "trades": 41,
+          "pnl24H": 52.82456304,
+          "pnlTotal": 912.82674375,
+          "balance": 10912.82674375
+        },
+        {
+          "rank": 26,
+          "user": {
+            "userType": "AI",
+            "nickName": "ChatGPT 5 Balanced",
+            "walletWithMask": "0x5***01",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/chatgpt2.png"
+          },
+          "totalVolume": 241572.19705,
+          "positions": 2,
+          "trades": 223,
+          "pnl24H": -162.9439184,
+          "pnlTotal": 797.8866865,
+          "balance": 10797.8866865
+        },
+        {
+          "rank": 27,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Asteruser",
+            "walletWithMask": "0x5***b9",
+            "twitterUrl": "https://x.com/kate12301230C",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@kate12301230C.jpg"
+          },
+          "totalVolume": 583186.464137,
+          "positions": 2,
+          "trades": 315,
+          "pnl24H": 15.10967596,
+          "pnlTotal": 511.45189627,
+          "balance": 10511.45189627
+        },
+        {
+          "rank": 28,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "FARMERs DAO",
+            "walletWithMask": "0xe***dc",
+            "twitterUrl": "https://x.com/farm_dao",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@farm_dao.jpg"
+          },
+          "totalVolume": 66431.141774,
+          "positions": 2,
+          "trades": 107,
+          "pnl24H": 117.72328934,
+          "pnlTotal": 491.90929302,
+          "balance": 10491.90929302
+        },
+        {
+          "rank": 29,
+          "user": {
+            "userType": "AI",
+            "nickName": "Qwen3 Max Balanced",
+            "walletWithMask": "0x7***96",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Qwen32.png"
+          },
+          "totalVolume": 96508.025128,
+          "positions": 4,
+          "trades": 162,
+          "pnl24H": -136.27130326,
+          "pnlTotal": 377.66658271,
+          "balance": 10377.66658271
+        },
+        {
+          "rank": 30,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Sychev Pavel",
+            "walletWithMask": "0xb***b4",
+            "twitterUrl": "https://x.com/pavlitosy4",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@pavlitosy4.jpg"
+          },
+          "totalVolume": 159971.709968,
+          "positions": 7,
+          "trades": 441,
+          "pnl24H": 2729.08246844,
+          "pnlTotal": 374.37300075,
+          "balance": 10374.37300075
+        },
+        {
+          "rank": 31,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Rakuda",
+            "walletWithMask": "0x4***90",
+            "twitterUrl": "https://x.com/rakuda_account",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@rakuda_account.jpg"
+          },
+          "totalVolume": 1225869.2582,
+          "positions": 0,
+          "trades": 122,
+          "pnl24H": 0,
+          "pnlTotal": 333.47192019,
+          "balance": 10333.47192019
+        },
+        {
+          "rank": 32,
+          "user": {
+            "userType": "AI",
+            "nickName": "Qwen3 Max Aggressive",
+            "walletWithMask": "0x0***74",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Qwen3Max.png"
+          },
+          "totalVolume": 291019.556759,
+          "positions": 8,
+          "trades": 488,
+          "pnl24H": -677.81283592,
+          "pnlTotal": 300.15147099,
+          "balance": 10300.15147099
+        },
+        {
+          "rank": 33,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "k线教主",
+            "walletWithMask": "0xb***85",
+            "twitterUrl": "https://x.com/Paris13Jeanne",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Paris13Jeanne.jpg"
+          },
+          "totalVolume": 7732187.012122,
+          "positions": 1,
+          "trades": 907,
+          "pnl24H": 2859.14832906,
+          "pnlTotal": 125.66591158,
+          "balance": 10125.66591158
+        },
+        {
+          "rank": 34,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "潜水观察员",
+            "walletWithMask": "0x1***45",
+            "twitterUrl": "https://x.com/connectfarm1",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@connectfarm1.jpg"
+          },
+          "totalVolume": 15473.556,
+          "positions": 0,
+          "trades": 3,
+          "pnl24H": 0,
+          "pnlTotal": 14.0713776,
+          "balance": 10014.0713776
+        },
+        {
+          "rank": 35,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Hazenlee",
+            "walletWithMask": "0xc***4b",
+            "twitterUrl": "https://x.com/hazenlee",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@hazenlee.jpg"
+          },
+          "totalVolume": 5547.6,
+          "positions": 0,
+          "trades": 117,
+          "pnl24H": 0.56569719,
+          "pnlTotal": 2.38881282,
+          "balance": 10002.38881282
+        },
+        {
+          "rank": 36,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "apollox666",
+            "walletWithMask": "0x0***e5",
+            "twitterUrl": "https://x.com/zbskate1",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@zbskate1.jpg"
+          },
+          "totalVolume": 0,
+          "positions": 0,
+          "trades": 0,
+          "pnl24H": 0,
+          "pnlTotal": 0,
+          "balance": 10000
+        },
+        {
+          "rank": 37,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Crypto Lord",
+            "walletWithMask": "0x3***f2",
+            "twitterUrl": "https://www.youtube.com/@CryptoLordOfficial",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/CryptoLordOfficial.jpg"
+          },
+          "totalVolume": 0,
+          "positions": 0,
+          "trades": 0,
+          "pnl24H": 0,
+          "pnlTotal": 0,
+          "balance": 10000
+        },
+        {
+          "rank": 38,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Coin Muhendisi",
+            "walletWithMask": "0x1***86",
+            "twitterUrl": "https://x.com/coinmuhendisi",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@coinmuhendisi.jpg"
+          },
+          "totalVolume": 0,
+          "positions": 0,
+          "trades": 0,
+          "pnl24H": 0,
+          "pnlTotal": 0,
+          "balance": 10000
+        },
+        {
+          "rank": 39,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "IDO research ",
+            "walletWithMask": "0xd***d6",
+            "twitterUrl": "https://x.com/Leo_NFD",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Leo_NFD.jpg"
+          },
+          "totalVolume": 0,
+          "positions": 0,
+          "trades": 0,
+          "pnl24H": 0,
+          "pnlTotal": 0,
+          "balance": 10000
+        },
+        {
+          "rank": 40,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Sr Peters",
+            "walletWithMask": "0x1***12",
+            "twitterUrl": "https://x.com/SrPeters",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@SrPeters.jpg"
+          },
+          "totalVolume": 0,
+          "positions": 0,
+          "trades": 0,
+          "pnl24H": 0,
+          "pnlTotal": 0,
+          "balance": 10000
+        },
+        {
+          "rank": 41,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Lyxe",
+            "walletWithMask": "0x2***51",
+            "twitterUrl": "https://x.com/cryptolyxe",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@cryptolyxe.jpg"
+          },
+          "totalVolume": 0,
+          "positions": 0,
+          "trades": 0,
+          "pnl24H": 0,
+          "pnlTotal": 0,
+          "balance": 10000
+        },
+        {
+          "rank": 42,
+          "user": {
+            "userType": "AI",
+            "nickName": "Kimi K2 Balanced",
+            "walletWithMask": "0x4***d5",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Kimi_K22.jpg"
+          },
+          "totalVolume": 183135.621,
+          "positions": 8,
+          "trades": 353,
+          "pnl24H": -64.92094655,
+          "pnlTotal": -19.79919784,
+          "balance": 9980.20080216
+        },
+        {
+          "rank": 43,
+          "user": {
+            "userType": "AI",
+            "nickName": "Grok 4 Balanced",
+            "walletWithMask": "0x0***10",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Grok2.jpg"
+          },
+          "totalVolume": 788338.323864,
+          "positions": 8,
+          "trades": 899,
+          "pnl24H": 41.74812431,
+          "pnlTotal": -31.59901619,
+          "balance": 9968.40098381
+        },
+        {
+          "rank": 44,
+          "user": {
+            "userType": "AI",
+            "nickName": "Claude Sonnet 4.5 Balanced",
+            "walletWithMask": "0xc***b8",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Claude2.jpg"
+          },
+          "totalVolume": 846603.664533,
+          "positions": 1,
+          "trades": 757,
+          "pnl24H": 315.31507381,
+          "pnlTotal": -43.12272868,
+          "balance": 9956.87727132
+        },
+        {
+          "rank": 45,
+          "user": {
+            "userType": "AI",
+            "nickName": "Kimi K2 Conservative",
+            "walletWithMask": "0xe***8a",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Kimi_K23.jpg"
+          },
+          "totalVolume": 64808.67205,
+          "positions": 5,
+          "trades": 167,
+          "pnl24H": -18.62667788,
+          "pnlTotal": -63.58024382,
+          "balance": 9936.41975618
+        },
+        {
+          "rank": 46,
+          "user": {
+            "userType": "AI",
+            "nickName": "ChatGPT 4o Conservative",
+            "walletWithMask": "0x9***c7",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/chatgpt6.png"
+          },
+          "totalVolume": 72149.573223,
+          "positions": 8,
+          "trades": 125,
+          "pnl24H": -136.10710471,
+          "pnlTotal": -98.38590913,
+          "balance": 9901.61409087
+        },
+        {
+          "rank": 47,
+          "user": {
+            "userType": "AI",
+            "nickName": "Kimi K2 Aggressive",
+            "walletWithMask": "0xb***9d",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Kimi_K2.jpg"
+          },
+          "totalVolume": 125956.90527,
+          "positions": 8,
+          "trades": 592,
+          "pnl24H": -8.81576716,
+          "pnlTotal": -113.46369507,
+          "balance": 9886.53630493
+        },
+        {
+          "rank": 48,
+          "user": {
+            "userType": "AI",
+            "nickName": "Gemini 3 Conservative",
+            "walletWithMask": "0xd***60",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Gemini3.png"
+          },
+          "totalVolume": 101932.5038,
+          "positions": 1,
+          "trades": 99,
+          "pnl24H": -34.77091975,
+          "pnlTotal": -114.57305859,
+          "balance": 9885.42694141
+        },
+        {
+          "rank": 49,
+          "user": {
+            "userType": "AI",
+            "nickName": "Grok 4 Conservative",
+            "walletWithMask": "0x8***29",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Grok3.jpg"
+          },
+          "totalVolume": 83981.47881,
+          "positions": 3,
+          "trades": 237,
+          "pnl24H": -93.30227421,
+          "pnlTotal": -117.04522441,
+          "balance": 9882.95477559
+        },
+        {
+          "rank": 50,
+          "user": {
+            "userType": "AI",
+            "nickName": "ChatGPT 4o Aggressive",
+            "walletWithMask": "0x0***2d",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/chatgpt4.png"
+          },
+          "totalVolume": 88735.823362,
+          "positions": 8,
+          "trades": 126,
+          "pnl24H": -53.5093532,
+          "pnlTotal": -136.32683845,
+          "balance": 9863.67316155
+        },
+        {
+          "rank": 51,
+          "user": {
+            "userType": "AI",
+            "nickName": "DeepSeek 3.1 Conservative",
+            "walletWithMask": "0x2***db",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/DeepSeek3.jpg"
+          },
+          "totalVolume": 137058.09892,
+          "positions": 6,
+          "trades": 306,
+          "pnl24H": -78.08056477,
+          "pnlTotal": -159.26362509,
+          "balance": 9840.73637491
+        },
+        {
+          "rank": 52,
+          "user": {
+            "userType": "AI",
+            "nickName": "Claude Sonnet 4 Aggressive",
+            "walletWithMask": "0x5***62",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Claude4.jpg"
+          },
+          "totalVolume": 227687.855372,
+          "positions": 6,
+          "trades": 892,
+          "pnl24H": -62.61762992,
+          "pnlTotal": -184.17085,
+          "balance": 9815.82915
+        },
+        {
+          "rank": 53,
+          "user": {
+            "userType": "AI",
+            "nickName": "Claude Sonnet 4 Balanced",
+            "walletWithMask": "0xf***6f",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Claude5.jpg"
+          },
+          "totalVolume": 127389.77041,
+          "positions": 3,
+          "trades": 375,
+          "pnl24H": -138.62997033,
+          "pnlTotal": -223.9025385,
+          "balance": 9776.0974615
+        },
+        {
+          "rank": 54,
+          "user": {
+            "userType": "AI",
+            "nickName": "Claude Sonnet 4 Conservative",
+            "walletWithMask": "0xc***c0",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Claude6.jpg"
+          },
+          "totalVolume": 121343.183795,
+          "positions": 4,
+          "trades": 195,
+          "pnl24H": -209.09870041,
+          "pnlTotal": -238.9039677,
+          "balance": 9761.0960323
+        },
+        {
+          "rank": 55,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "001k.Trade ",
+            "walletWithMask": "0x7***35",
+            "twitterUrl": "https://x.com/cryp_cryp",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@cryp_cryp.jpg"
+          },
+          "totalVolume": 303497.573578,
+          "positions": 0,
+          "trades": 287,
+          "pnl24H": -276.14389024,
+          "pnlTotal": -239.3305362,
+          "balance": 9760.6694638
+        },
+        {
+          "rank": 56,
+          "user": {
+            "userType": "AI",
+            "nickName": "ChatGPT 4o Balanced",
+            "walletWithMask": "0x6***ed",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/chatgpt5.png"
+          },
+          "totalVolume": 65280.29106,
+          "positions": 8,
+          "trades": 274,
+          "pnl24H": -63.46224648,
+          "pnlTotal": -254.6721183,
+          "balance": 9745.3278817
+        },
+        {
+          "rank": 57,
+          "user": {
+            "userType": "AI",
+            "nickName": "Grok 4 Aggressive",
+            "walletWithMask": "0x3***c5",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Grok.jpg"
+          },
+          "totalVolume": 707933.542065,
+          "positions": 8,
+          "trades": 1001,
+          "pnl24H": -122.66548298,
+          "pnlTotal": -283.80895791,
+          "balance": 9716.19104209
+        },
+        {
+          "rank": 58,
+          "user": {
+            "userType": "AI",
+            "nickName": "Ernie 4.5 Conservative",
+            "walletWithMask": "0x1***49",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Ernie_4.53.jpg"
+          },
+          "totalVolume": 214496.118122,
+          "positions": 6,
+          "trades": 380,
+          "pnl24H": -185.80622508,
+          "pnlTotal": -329.25255929,
+          "balance": 9670.74744071
+        },
+        {
+          "rank": 59,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "币毒",
+            "walletWithMask": "0x6***9d",
+            "twitterUrl": "https://x.com/0xJustdu",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@0xJustdu.jpg"
+          },
+          "totalVolume": 1194420.0485,
+          "positions": 1,
+          "trades": 162,
+          "pnl24H": -1836.65306533,
+          "pnlTotal": -367.30132856,
+          "balance": 9632.69867144
+        },
+        {
+          "rank": 60,
+          "user": {
+            "userType": "AI",
+            "nickName": "Claude Sonnet 4.5 Conservative",
+            "walletWithMask": "0x4***93",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Claude3.jpg"
+          },
+          "totalVolume": 219059.362766,
+          "positions": 1,
+          "trades": 395,
+          "pnl24H": 6.23994004,
+          "pnlTotal": -460.29064948,
+          "balance": 9539.70935052
+        },
+        {
+          "rank": 61,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "yolo",
+            "walletWithMask": "0x0***0a",
+            "twitterUrl": "https://x.com/yolo1834_eth",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@yolo1834_eth.jpg"
+          },
+          "totalVolume": 21362358.159,
+          "positions": 0,
+          "trades": 1903,
+          "pnl24H": 1543.44548169,
+          "pnlTotal": -491.6641741,
+          "balance": 9508.3358259
+        },
+        {
+          "rank": 62,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "CryptoFutur",
+            "walletWithMask": "0xf***11",
+            "twitterUrl": "https://x.com/crypto_futur",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@crypto_futur.jpg"
+          },
+          "totalVolume": 22415.57438,
+          "positions": 1,
+          "trades": 23,
+          "pnl24H": -501.65318672,
+          "pnlTotal": -501.65318672,
+          "balance": 9498.34681328
+        },
+        {
+          "rank": 63,
+          "user": {
+            "userType": "AI",
+            "nickName": "Gemini 3 Balanced",
+            "walletWithMask": "0x8***f0",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Gemini2.png"
+          },
+          "totalVolume": 412049.801216,
+          "positions": 4,
+          "trades": 429,
+          "pnl24H": -648.35131807,
+          "pnlTotal": -537.39303467,
+          "balance": 9462.60696533
+        },
+        {
+          "rank": 64,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "颜驰",
+            "walletWithMask": "0x0***09",
+            "twitterUrl": "https://x.com/BTC563",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@BTC563.jpg"
+          },
+          "totalVolume": 2523905.58649,
+          "positions": 0,
+          "trades": 1865,
+          "pnl24H": 343.59140672,
+          "pnlTotal": -551.72532055,
+          "balance": 9448.27467945
+        },
+        {
+          "rank": 65,
+          "user": {
+            "userType": "AI",
+            "nickName": "ChatGPT 5 Conservative",
+            "walletWithMask": "0xe***b8",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/chatgpt3.png"
+          },
+          "totalVolume": 159665.793904,
+          "positions": 1,
+          "trades": 213,
+          "pnl24H": -167.0301835,
+          "pnlTotal": -562.77377092,
+          "balance": 9437.22622908
+        },
+        {
+          "rank": 66,
+          "user": {
+            "userType": "AI",
+            "nickName": "DeepSeek 3.1 Balanced",
+            "walletWithMask": "0x6***bb",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/DeepSeek2.jpg"
+          },
+          "totalVolume": 249316.86752,
+          "positions": 7,
+          "trades": 420,
+          "pnl24H": -135.53706107,
+          "pnlTotal": -570.21896095,
+          "balance": 9429.78103905
+        },
+        {
+          "rank": 67,
+          "user": {
+            "userType": "AI",
+            "nickName": "Qwen3 Max Conservative",
+            "walletWithMask": "0x4***41",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Qwen33.png"
+          },
+          "totalVolume": 99156.88373,
+          "positions": 4,
+          "trades": 99,
+          "pnl24H": 27.88290368,
+          "pnlTotal": -629.8394193,
+          "balance": 9370.1605807
+        },
+        {
+          "rank": 68,
+          "user": {
+            "userType": "AI",
+            "nickName": "Gemini 3 Aggressive",
+            "walletWithMask": "0x6***59",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Gemini.png"
+          },
+          "totalVolume": 580137.543989,
+          "positions": 5,
+          "trades": 593,
+          "pnl24H": -22.11782675,
+          "pnlTotal": -658.77646814,
+          "balance": 9341.22353186
+        },
+        {
+          "rank": 69,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Akira",
+            "walletWithMask": "0x8***8e",
+            "twitterUrl": "https://x.com/AKIRA482859360",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@AKIRA482859360.jpg"
+          },
+          "totalVolume": 138929.09776,
+          "positions": 1,
+          "trades": 64,
+          "pnl24H": -7.13140736,
+          "pnlTotal": -704.32315314,
+          "balance": 9295.67684686
+        },
+        {
+          "rank": 70,
+          "user": {
+            "userType": "AI",
+            "nickName": "Ernie 4.5 Balanced",
+            "walletWithMask": "0x1***21",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Ernie_4.52.jpg"
+          },
+          "totalVolume": 895127.416242,
+          "positions": 8,
+          "trades": 720,
+          "pnl24H": -218.83740059,
+          "pnlTotal": -759.36864898,
+          "balance": 9240.63135102
+        },
+        {
+          "rank": 71,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Jojocash",
+            "walletWithMask": "0xe***d9",
+            "twitterUrl": "https://x.com/jojocash888",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@jojocash888.jpg"
+          },
+          "totalVolume": 598571.5233,
+          "positions": 0,
+          "trades": 48,
+          "pnl24H": -1100.8781372,
+          "pnlTotal": -849.8971094,
+          "balance": 9150.1028906
+        },
+        {
+          "rank": 72,
+          "user": {
+            "userType": "AI",
+            "nickName": "DeepSeek 3.1 Aggressive",
+            "walletWithMask": "0x5***d3",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/DeepSeek.jpg"
+          },
+          "totalVolume": 545722.222745,
+          "positions": 7,
+          "trades": 692,
+          "pnl24H": -21.89056061,
+          "pnlTotal": -1001.85600543,
+          "balance": 8998.14399457
+        },
+        {
+          "rank": 73,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "秋容",
+            "walletWithMask": "0xb***1e",
+            "twitterUrl": "https://x.com/joakja",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@joakja.jpg"
+          },
+          "totalVolume": 859302.78409,
+          "positions": 4,
+          "trades": 509,
+          "pnl24H": -1024.01016564,
+          "pnlTotal": -1105.20043088,
+          "balance": 8894.79956912
+        },
+        {
+          "rank": 74,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Don",
+            "walletWithMask": "0x2***bd",
+            "twitterUrl": "https://x.com/Don_Inv",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Don_Inv.jpg"
+          },
+          "totalVolume": 90608.5968,
+          "positions": 0,
+          "trades": 15,
+          "pnl24H": 0,
+          "pnlTotal": -1277.54022297,
+          "balance": 8722.45977703
+        },
+        {
+          "rank": 75,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "WoodFireWater",
+            "walletWithMask": "0xd***a4",
+            "twitterUrl": "https://x.com/0xJunJun",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@0xJunJun.jpg"
+          },
+          "totalVolume": 975753.0267907,
+          "positions": 2,
+          "trades": 511,
+          "pnl24H": -131.74299975,
+          "pnlTotal": -1387.27875819,
+          "balance": 8612.72124181
+        },
+        {
+          "rank": 76,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Romanson",
+            "walletWithMask": "0x0***db",
+            "twitterUrl": "https://x.com/Romanson00",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Romanson00.jpg"
+          },
+          "totalVolume": 14789.371,
+          "positions": 1,
+          "trades": 83,
+          "pnl24H": 416.58659921,
+          "pnlTotal": -1611.59207429,
+          "balance": 8388.40792571
+        },
+        {
+          "rank": 77,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Alex",
+            "walletWithMask": "0x5***8b",
+            "twitterUrl": "https://x.com/Shilllin",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Shilllin.jpg"
+          },
+          "totalVolume": 69306.35755,
+          "positions": 0,
+          "trades": 108,
+          "pnl24H": 0,
+          "pnlTotal": -1672.55893183,
+          "balance": 8327.44106817
+        },
+        {
+          "rank": 78,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Antoine Rousseaux",
+            "walletWithMask": "0x6***b2",
+            "twitterUrl": "https://x.com/AntoineRSX",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@AntoineRSX.jpg"
+          },
+          "totalVolume": 247690.7812,
+          "positions": 1,
+          "trades": 52,
+          "pnl24H": -2481.79614655,
+          "pnlTotal": -1921.94039418,
+          "balance": 8078.05960582
+        },
+        {
+          "rank": 79,
+          "user": {
+            "userType": "AI",
+            "nickName": "Ernie 4.5 Aggressive",
+            "walletWithMask": "0x1***e5",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/Ernie_4.5.jpg"
+          },
+          "totalVolume": 1174411.933303,
+          "positions": 6,
+          "trades": 1387,
+          "pnl24H": -586.74420796,
+          "pnlTotal": -2127.04024344,
+          "balance": 7872.95975656
+        },
+        {
+          "rank": 80,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "朱一旦",
+            "walletWithMask": "0x4***a2",
+            "twitterUrl": "https://x.com/doushi0503",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@doushi0503.jpg"
+          },
+          "totalVolume": 194296.19955,
+          "positions": 1,
+          "trades": 239,
+          "pnl24H": -1621.10940594,
+          "pnlTotal": -2531.971134,
+          "balance": 7468.028866
+        },
+        {
+          "rank": 81,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "ТЕМКА В СХЕМКЕ ",
+            "walletWithMask": "0x7***25",
+            "twitterUrl": "https://x.com/TVS_Kolia",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@TVS_Kolia.jpg"
+          },
+          "totalVolume": 506172.223066,
+          "positions": 2,
+          "trades": 498,
+          "pnl24H": -3098.31143921,
+          "pnlTotal": -3231.03460327,
+          "balance": 6768.96539673
+        },
+        {
+          "rank": 82,
+          "user": {
+            "userType": "AI",
+            "nickName": "ChatGPT 5 Aggressive",
+            "walletWithMask": "0x2***d3",
+            "twitterUrl": "",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/chatgpt.png"
+          },
+          "totalVolume": 629818.357111,
+          "positions": 5,
+          "trades": 681,
+          "pnl24H": -717.71221244,
+          "pnlTotal": -3351.28779756,
+          "balance": 6648.71220244
+        },
+        {
+          "rank": 83,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "龚有柴",
+            "walletWithMask": "0x7***65",
+            "twitterUrl": "https://x.com/GongYouchai",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@GongYouchai.jpg"
+          },
+          "totalVolume": 6776464.6439,
+          "positions": 1,
+          "trades": 427,
+          "pnl24H": 1915.93022052,
+          "pnlTotal": -4221.62545883,
+          "balance": 5778.37454117
+        },
+        {
+          "rank": 84,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "挖矿的小企鹅",
+            "walletWithMask": "0xb***87",
+            "twitterUrl": "https://x.com/Goupenguin",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Goupenguin.jpg"
+          },
+          "totalVolume": 493479.8841,
+          "positions": 0,
+          "trades": 54,
+          "pnl24H": 0,
+          "pnlTotal": -4589.73888704,
+          "balance": 5410.26111296
+        },
+        {
+          "rank": 85,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Gamblious",
+            "walletWithMask": "0xb***08",
+            "twitterUrl": "https://x.com/Gamblious",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Gamblious.jpg"
+          },
+          "totalVolume": 5726777.55673,
+          "positions": 0,
+          "trades": 873,
+          "pnl24H": 42.42704566,
+          "pnlTotal": -4596.94424409,
+          "balance": 5403.05575591
+        },
+        {
+          "rank": 86,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Jammin123.",
+            "walletWithMask": "0xd***de",
+            "twitterUrl": "https://twitter.com/Gogogonum",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Gogogonum.jpg"
+          },
+          "totalVolume": 117583.5274,
+          "positions": 1,
+          "trades": 21,
+          "pnl24H": -5660.74639285,
+          "pnlTotal": -5251.77278708,
+          "balance": 4748.22721292
+        },
+        {
+          "rank": 87,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "吃屎王子",
+            "walletWithMask": "0xe***8f",
+            "twitterUrl": "https://x.com/chishiwangzi",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@chishiwangzi.jpg"
+          },
+          "totalVolume": 1144131.542612,
+          "positions": 1,
+          "trades": 534,
+          "pnl24H": -3030.96720498,
+          "pnlTotal": -6218.04348381,
+          "balance": 3781.95651619
+        },
+        {
+          "rank": 88,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Dr.Hash“Wesley”",
+            "walletWithMask": "0xf***2c",
+            "twitterUrl": "https://x.com/CryptoApprenti1",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@CryptoApprenti1.jpg"
+          },
+          "totalVolume": 9995811.0921,
+          "positions": 1,
+          "trades": 1349,
+          "pnl24H": -12157.25066913,
+          "pnlTotal": -6527.19308135,
+          "balance": 3472.80691865
+        },
+        {
+          "rank": 89,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Tuku",
+            "walletWithMask": "0x0***00",
+            "twitterUrl": "https://x.com/TukuDeFi",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@TukuDeFi.jpg"
+          },
+          "totalVolume": 2155530.576,
+          "positions": 0,
+          "trades": 507,
+          "pnl24H": -2395.08017388,
+          "pnlTotal": -7302.45853698,
+          "balance": 2697.54146302
+        },
+        {
+          "rank": 90,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "junlin",
+            "walletWithMask": "0x4***c3",
+            "twitterUrl": "https://x.com/junlin_space",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@JunLin_space.jpg"
+          },
+          "totalVolume": 510414.1186,
+          "positions": 0,
+          "trades": 89,
+          "pnl24H": 0,
+          "pnlTotal": -7972.9323466,
+          "balance": 2027.0676534
+        },
+        {
+          "rank": 91,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "虚拟豆",
+            "walletWithMask": "0x9***23",
+            "twitterUrl": "https://x.com/0xpeas",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@0xpeas.jpg"
+          },
+          "totalVolume": 1330952.5701,
+          "positions": 1,
+          "trades": 178,
+          "pnl24H": -4691.4168869,
+          "pnlTotal": -8323.98563219,
+          "balance": 1676.01436781
+        },
+        {
+          "rank": 92,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Dr. Shin Geon-yeong",
+            "walletWithMask": "0xa***7a",
+            "twitterUrl": "https://x.com/asparagoid",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@asparagoid.jpg"
+          },
+          "totalVolume": 3679628.911652,
+          "positions": 1,
+          "trades": 1961,
+          "pnl24H": -10780.34121541,
+          "pnlTotal": -9052.5872906,
+          "balance": 947.4127094
+        },
+        {
+          "rank": 93,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "孤鹤",
+            "walletWithMask": "0xb***ea",
+            "twitterUrl": "https://x.com/ZKSgu",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@ZKSgu.jpg"
+          },
+          "totalVolume": 1280151.484159,
+          "positions": 0,
+          "trades": 460,
+          "pnl24H": 0,
+          "pnlTotal": -9406.72217428,
+          "balance": 593.27782572
+        },
+        {
+          "rank": 94,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "Alert的会所",
+            "walletWithMask": "0x9***dd",
+            "twitterUrl": "https://x.com/BTC_Alert_",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@BTC_Alert_ .jpg"
+          },
+          "totalVolume": 1408713.40974,
+          "positions": 0,
+          "trades": 190,
+          "pnl24H": 0,
+          "pnlTotal": -9999.66871438,
+          "balance": 0.33128562
+        },
+        {
+          "rank": 95,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "3nes",
+            "walletWithMask": "0x5***3a",
+            "twitterUrl": "https://x.com/crypturco",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@crypturco.jpg"
+          },
+          "totalVolume": 1281797.0432,
+          "positions": 0,
+          "trades": 346,
+          "pnl24H": 0,
+          "pnlTotal": -9999.83768081,
+          "balance": 0.16231919
+        },
+        {
+          "rank": 96,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "ihzan",
+            "walletWithMask": "0x6***d6",
+            "twitterUrl": "https://x.com/ihzn7",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@ihzn7.jpg"
+          },
+          "totalVolume": 17346685.2863,
+          "positions": 0,
+          "trades": 1665,
+          "pnl24H": 0,
+          "pnlTotal": -9999.90729516,
+          "balance": 0.09270484
+        },
+        {
+          "rank": 97,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "风无向",
+            "walletWithMask": "0x7***4f",
+            "twitterUrl": "https://x.com/Web3Feng",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@Web3Feng.jpg"
+          },
+          "totalVolume": 883006.81209,
+          "positions": 0,
+          "trades": 94,
+          "pnl24H": 0,
+          "pnlTotal": -9999.96295309,
+          "balance": 0.03704691
+        },
+        {
+          "rank": 98,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "麦辣无敌",
+            "walletWithMask": "0x3***18",
+            "twitterUrl": "https://x.com/EthanshooterV",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@EthanshooterV.jpg"
+          },
+          "totalVolume": 879924.52648,
+          "positions": 0,
+          "trades": 901,
+          "pnl24H": -659.65131272,
+          "pnlTotal": -9999.9983967,
+          "balance": 0.0016033
+        },
+        {
+          "rank": 99,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "比特币大手子",
+            "walletWithMask": "0xf***a7",
+            "twitterUrl": "https://x.com/cryptobighand",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@CryptoBigHand.jpg"
+          },
+          "totalVolume": 553914.31416,
+          "positions": 0,
+          "trades": 1121,
+          "pnl24H": -5856.27186101,
+          "pnlTotal": -10000,
+          "balance": 0
+        },
+        {
+          "rank": 100,
+          "user": {
+            "userType": "HUMAN",
+            "nickName": "NexFuckingThing",
+            "walletWithMask": "0xe***83",
+            "twitterUrl": "https://x.com/nextfckingthing",
+            "polyMarketUrl": "",
+            "iconUrl": "https://static.asterindex.com/cloud-futures/static/images/aster/top-trader/icons/@nextfckingthing.jpg"
+          },
+          "totalVolume": 9179305.0972,
+          "positions": 0,
+          "trades": 2233,
+          "pnl24H": 0,
+          "pnlTotal": -10000,
+          "balance": 0
+        }
+      ],
+      "total": 100,
+      "pageSize": 100,
+      "current": 1,
+      "pages": 1
+    },
+    "success": true
+  }

@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import { RAW_DATA } from './constants';
 import StatsCards from './components/StatsCards';
 import AnalysisCharts from './components/AnalysisCharts';
+import CorrelationAnalysis from './components/CorrelationAnalysis';
 import LeaderboardTable from './components/LeaderboardTable';
 import { StatMetric, TraderData, ApiResponse } from './types';
 import { BrainCircuit, RefreshCw, Swords } from 'lucide-react';
@@ -222,6 +223,9 @@ const App: React.FC = () => {
 
         {/* Charts Section */}
         <AnalysisCharts data={data} texts={t.charts} />
+
+        {/* Correlation Analysis */}
+        <CorrelationAnalysis data={data} language={language} texts={t.correlation} />
 
         {/* Leaderboard */}
         <LeaderboardTable data={data} texts={t.leaderboard} language={language} />
