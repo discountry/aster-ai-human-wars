@@ -27,7 +27,7 @@ interface CorrelationAnalysisProps {
 interface ScatterPoint {
   x: number; // log1p(totalVolume)
   y: number; // log1p(trades)
-  z: number; // totalVolume (bubble size)
+  z: number; // |metric| (bubble size based on absolute metric value)
   metric: number | null;
   metricLabel: string;
   nickName: string;
@@ -57,7 +57,7 @@ interface CustomTooltipProps {
 
 const PROFIT_COLOR = '#10B981'; // Emerald-500
 const LOSS_COLOR = '#EF4444'; // Red-500
-const NEUTRAL_COLOR = '#64748B'; // Slate-500
+const INACTIVE_COLOR = '#64748B'; // Slate-500 (gray for zero trades/volume)
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
@@ -68,43 +68,20 @@ const isFiniteNumber = (value: unknown): value is number =>
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null;
 
-const hexToRgb = (
-  hex: string
-): { r: number; g: number; b: number } | null => {
-  const normalized = hex.startsWith('#') ? hex.slice(1) : hex;
-  if (normalized.length !== 6) return null;
-  const r = Number.parseInt(normalized.slice(0, 2), 16);
-  const g = Number.parseInt(normalized.slice(2, 4), 16);
-  const b = Number.parseInt(normalized.slice(4, 6), 16);
-  if (!Number.isFinite(r) || !Number.isFinite(g) || !Number.isFinite(b)) return null;
-  return { r, g, b };
-};
-
-const rgbToHex = (rgb: { r: number; g: number; b: number }): string => {
-  const toHex = (n: number) => clamp(Math.round(n), 0, 255).toString(16).padStart(2, '0');
-  return `#${toHex(rgb.r)}${toHex(rgb.g)}${toHex(rgb.b)}`;
+const getPointColor = (point: ScatterPoint | null): string => {
+  if (!point) return 'transparent';
+  // Check if trades or volume is zero - use gray for inactive points
+  if (point.trades === 0 || point.totalVolume === 0) {
+    return INACTIVE_COLOR;
+  }
+  // For active points, use color based on metric
+  if (!isFiniteNumber(point.metric)) return 'transparent';
+  if (point.metric > 0) return PROFIT_COLOR;
+  if (point.metric < 0) return LOSS_COLOR;
+  return 'transparent'; // metric === 0
 };
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-
-const interpolateHex = (a: string, b: string, t: number): string => {
-  const ra = hexToRgb(a);
-  const rb = hexToRgb(b);
-  if (!ra || !rb) return a;
-  return rgbToHex({
-    r: lerp(ra.r, rb.r, t),
-    g: lerp(ra.g, rb.g, t),
-    b: lerp(ra.b, rb.b, t),
-  });
-};
-
-const divergingColor = (value: number, maxAbs: number): string => {
-  if (!Number.isFinite(maxAbs) || maxAbs <= 0) return NEUTRAL_COLOR;
-  const t = clamp(value / maxAbs, -1, 1);
-  if (t === 0) return NEUTRAL_COLOR;
-  if (t < 0) return interpolateHex(NEUTRAL_COLOR, LOSS_COLOR, Math.abs(t));
-  return interpolateHex(NEUTRAL_COLOR, PROFIT_COLOR, t);
-};
 
 const quantile = (sortedValues: number[], q: number): number | null => {
   if (sortedValues.length === 0) return null;
@@ -324,11 +301,14 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
               ? pnlPerVolBps
               : pnlPerTrade;
 
+      const metricValue = isFiniteNumber(metric) ? metric : null;
+      const metricAbs = metricValue != null ? Math.abs(metricValue) : 0;
+
       return {
         x: logVol,
         y: logTrades,
-        z: trader.totalVolume,
-        metric: isFiniteNumber(metric) ? metric : null,
+        z: metricAbs, // Use absolute metric value for bubble size
+        metric: metricValue,
         metricLabel,
         nickName: trader.user.nickName,
         userType: trader.user.userType,
@@ -352,15 +332,6 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
     () => points.map((p) => (p.userType === 'AI' ? p : null)),
     [points]
   );
-
-  const metricScale = useMemo(() => {
-    const absValues = points
-      .map((p) => (isFiniteNumber(p.metric) ? Math.abs(p.metric) : null))
-      .filter(isFiniteNumber)
-      .sort((a, b) => a - b);
-    const p95 = absValues.length > 0 ? quantile(absValues, 0.95) : null;
-    return isFiniteNumber(p95) && p95 > 0 ? p95 : 1;
-  }, [points]);
 
   const medianX = useMemo(() => median(points.map((p) => p.x)), [points]);
   const medianY = useMemo(() => median(points.map((p) => p.y)), [points]);
@@ -562,7 +533,7 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
                     fill: '#94a3b8',
                   }}
                 />
-                <ZAxis type="number" dataKey="z" range={[60, 360]} />
+                <ZAxis type="number" dataKey="z" range={[60, 360]} name={metricLabel} />
                 {isFiniteNumber(medianX) && (
                   <ReferenceLine x={medianX} stroke="#334155" strokeDasharray="3 3" />
                 )}
@@ -587,19 +558,12 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
                   name={texts.humanLabel}
                   data={seriesHuman}
                   shape="circle"
-                  fill={NEUTRAL_COLOR}
                   fillOpacity={0.75}
                 >
                   {seriesHuman.map((p, idx) => (
                     <Cell
                       key={`h-${idx}`}
-                      fill={
-                        p
-                          ? isFiniteNumber(p.metric)
-                            ? divergingColor(p.metric, metricScale)
-                            : NEUTRAL_COLOR
-                          : 'transparent'
-                      }
+                      fill={getPointColor(p)}
                     />
                   ))}
                 </Scatter>
@@ -607,19 +571,12 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
                   name={texts.aiLabel}
                   data={seriesAI}
                   shape="triangle"
-                  fill={NEUTRAL_COLOR}
                   fillOpacity={0.75}
                 >
                   {seriesAI.map((p, idx) => (
                     <Cell
                       key={`a-${idx}`}
-                      fill={
-                        p
-                          ? isFiniteNumber(p.metric)
-                            ? divergingColor(p.metric, metricScale)
-                            : NEUTRAL_COLOR
-                          : 'transparent'
-                      }
+                      fill={getPointColor(p)}
                     />
                   ))}
                 </Scatter>
