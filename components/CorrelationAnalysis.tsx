@@ -41,6 +41,8 @@ interface ScatterPoint {
   balance: number;
 }
 
+type ScatterPointOrNull = ScatterPoint | null;
+
 type TooltipPayloadItem = {
   name?: string;
   value?: unknown;
@@ -341,11 +343,15 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
     });
   }, [filteredData, metricKey, metricLabel]);
 
-  const seriesHuman = useMemo(
-    () => points.filter((p) => p.userType === 'HUMAN'),
+  // Keep arrays aligned so Recharts tooltip index stays in sync across series.
+  const seriesHuman = useMemo<ScatterPointOrNull[]>(
+    () => points.map((p) => (p.userType === 'HUMAN' ? p : null)),
     [points]
   );
-  const seriesAI = useMemo(() => points.filter((p) => p.userType === 'AI'), [points]);
+  const seriesAI = useMemo<ScatterPointOrNull[]>(
+    () => points.map((p) => (p.userType === 'AI' ? p : null)),
+    [points]
+  );
 
   const metricScale = useMemo(() => {
     const absValues = points
@@ -577,19 +583,43 @@ const CorrelationAnalysis: React.FC<CorrelationAnalysisProps> = ({
                   }
                 />
                 <Legend />
-                <Scatter name={texts.humanLabel} data={seriesHuman} shape="circle" fillOpacity={0.75}>
+                <Scatter
+                  name={texts.humanLabel}
+                  data={seriesHuman}
+                  shape="circle"
+                  fill={NEUTRAL_COLOR}
+                  fillOpacity={0.75}
+                >
                   {seriesHuman.map((p, idx) => (
                     <Cell
                       key={`h-${idx}`}
-                      fill={isFiniteNumber(p.metric) ? divergingColor(p.metric, metricScale) : NEUTRAL_COLOR}
+                      fill={
+                        p
+                          ? isFiniteNumber(p.metric)
+                            ? divergingColor(p.metric, metricScale)
+                            : NEUTRAL_COLOR
+                          : 'transparent'
+                      }
                     />
                   ))}
                 </Scatter>
-                <Scatter name={texts.aiLabel} data={seriesAI} shape="triangle" fillOpacity={0.75}>
+                <Scatter
+                  name={texts.aiLabel}
+                  data={seriesAI}
+                  shape="triangle"
+                  fill={NEUTRAL_COLOR}
+                  fillOpacity={0.75}
+                >
                   {seriesAI.map((p, idx) => (
                     <Cell
                       key={`a-${idx}`}
-                      fill={isFiniteNumber(p.metric) ? divergingColor(p.metric, metricScale) : NEUTRAL_COLOR}
+                      fill={
+                        p
+                          ? isFiniteNumber(p.metric)
+                            ? divergingColor(p.metric, metricScale)
+                            : NEUTRAL_COLOR
+                          : 'transparent'
+                      }
                     />
                   ))}
                 </Scatter>
