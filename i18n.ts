@@ -259,7 +259,7 @@ export const translations: Record<Language, TranslationContent> = {
       axisPnL: '总收益（美元）',
       axisVolume: '成交量',
       profitable: '盈利',
-      liquidated: '亏光（余额≈0）',
+      liquidated: '爆仓（余额≈0）',
       loss: '亏损',
       inactive: '零成交',
       avgTotalPnL: '平均总收益',
@@ -380,7 +380,7 @@ export const translations: Record<Language, TranslationContent> = {
           profitable: '盈利',
           loss: '亏损',
           inactive: '零成交',
-          liquidated: '亏光（余额≈0）',
+          liquidated: '爆仓（余额≈0）',
         },
       },
       roiChart: {
